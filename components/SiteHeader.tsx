@@ -17,7 +17,6 @@ const navLinks = [
   { label: "Inicio", tab: "inicio" as TabType, icon: Home },
   { label: "Servicios", tab: "servicios" as TabType, icon: Briefcase },
   { label: "Proyectos", tab: "proyectos" as TabType, icon: Layers },
-  { label: "Precios", tab: "precios" as TabType, icon: DollarSign },
   { label: "Nosotros", tab: "nosotros" as TabType, icon: Users },
 ];
 
