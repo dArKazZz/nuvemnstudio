@@ -18,7 +18,7 @@ const team = [
   },
   {
     name: 'Marco Chacón',
-    role: 'CTO & Lead Developer',
+    role: 'CEO & Founder',
     image: 'https://placehold.co/400x400/101010/ffffff?text=MC',
     bio: 'Arquitecto de software experto en tecnologías modernas. Especialista en crear sistemas escalables, robustos y experiencias de usuario fluidas.',
     socials: {
