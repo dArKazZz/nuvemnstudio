@@ -11,7 +11,7 @@ import CTA from "@/components/CTA";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 
-export type TabType = "inicio" | "servicios" | "proyectos" | "precios" | "nosotros";
+export type TabType = "inicio" | "servicios" | "proyectos" | "nosotros";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState<TabType>("inicio");
@@ -35,16 +35,14 @@ export default function Home() {
           <>
             <Services />
             <Process />
+            <Pricing />
           </>
         );
       case "proyectos":
         return <Showcase />;
-      case "precios":
-        return <Pricing />;
       case "nosotros":
         return <Testimonials />;
-      default:
-        return <Hero />;
+      
     }
   };
 
