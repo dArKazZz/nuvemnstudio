@@ -5,26 +5,30 @@ import { Code, Rocket, Database, Globe } from "lucide-react";
 const steps = [
   {
     number: "01",
-    title: "DATA INGESTION",
-    description: "We connect to your existing data pipelines and establish secure read-only access.",
+    title: "Descubrimiento & Estrategia",
+    description:
+      "Entendemos tu negocio, objetivos y público. Definimos alcance, contenidos y prioridades del sitio.",
     icon: Database,
   },
   {
     number: "02",
-    title: "MODEL TRAINING",
-    description: "Our proprietary algorithms train on your dataset to identify growth patterns.",
+    title: "Diseño UX/UI",
+    description:
+      "Creamos una interfaz clara y atractiva: wireframes, estilos y componentes coherentes.",
     icon: Code,
   },
   {
     number: "03",
-    title: "DEPLOYMENT",
-    description: "Live activation of optimization agents across your chosen channels.",
+    title: "Desarrollo & Integración",
+    description:
+      "Implementamos en Next.js/React con rendimiento y accesibilidad. Integración de formularios y analítica.",
     icon: Globe,
   },
   {
     number: "04",
-    title: "SCALING",
-    description: "Automatic resource allocation based on performance metrics.",
+    title: "Lanzamiento & Soporte",
+    description:
+      "Pruebas, SEO técnico y despliegue. Monitoreo, actualizaciones y mejoras continuas.",
     icon: Rocket,
   },
 ];
@@ -35,7 +39,7 @@ export default function Process() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="mb-20">
             <h2 className="font-display text-4xl md:text-6xl font-light uppercase tracking-wide mb-4">
-                Deployment Protocol
+              Proceso de Creación Web
             </h2>
             <div className="h-1 w-20 bg-[var(--accent-primary)]" />
         </div>

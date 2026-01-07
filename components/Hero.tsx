@@ -53,58 +53,59 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.8 }}
-          className="w-full max-w-5xl mt-24 relative z-20"
+          className="w-full max-w-7xl mt-24 relative z-20"
         >
-          <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-md overflow-hidden">
-            <div className="grid grid-cols-1 lg:grid-cols-2">
-              <div className="p-8 md:p-12">
+          <div className="rounded-3xl border border-white/10 bg-black/40 backdrop-blur-md shadow-[0_20px_80px_rgba(0,0,0,0.6)] overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-12">
+              <div className="p-8 md:p-12 lg:col-span-5 text-left">
                 <div className="text-xs tracking-widest font-mono text-white/60 mb-4">CASOS DE ÉXITO</div>
                 <h3 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-white mb-6">
                   Porfolio <span className="italic">web</span>
                 </h3>
                 <p className="text-white/80 leading-relaxed mb-6">
-                  Entendemos que tu presencia en línea es crucial para el éxito de tu negocio. Ya sea que necesites lanzar un nuevo sitio web, mejorar el diseño de uno existente o asistencia con la administración y mantenimiento continuo, estamos aquí para ayudarte.
+                  Tu presencia online impulsa tu negocio. Creamos sitios nuevos, renovamos los que ya tienes y mantenemos todo funcionando para que siempre rinda.
                 </p>
                 <ul className="space-y-4 text-white/85">
                   <li className="flex gap-3">
                     <span className="mt-1 w-1.5 h-1.5 rounded-full bg-white/60" />
                     <div>
-                      <span className="font-semibold">Experiencia Comprobada:</span> Nuestro equipo tiene años de experiencia trabajando exclusivamente con WordPress. Conocemos las mejores prácticas, las últimas tendencias y estamos comprometidos a brindarte soluciones personalizadas y eficientes.
+                      <span className="font-semibold">Experiencia:</span>  Soluciones a medida y eficientes.
                     </div>
                   </li>
                   <li className="flex gap-3">
                     <span className="mt-1 w-1.5 h-1.5 rounded-full bg-white/60" />
                     <div>
-                      <span className="font-semibold">Diseño Atractivo:</span> Sabemos que la primera impresión cuenta. Creamos diseños atractivos, intuitivos y centrados en el usuario que no solo impresionarán a tus visitantes, sino que también mejorarán la experiencia general de navegación.
+                      <span className="font-semibold">Diseño:</span> Primera impresión que enamora: limpio, intuitivo y centrado en el usuario.
                     </div>
                   </li>
                   <li className="flex gap-3">
                     <span className="mt-1 w-1.5 h-1.5 rounded-full bg-white/60" />
                     <div>
-                      <span className="font-semibold">Optimización Constante:</span> La presencia en línea no es estática, y entendemos la importancia de mantener tu sitio actualizado y optimizado. Ofrecemos servicios de mantenimiento, actualizaciones de seguridad y optimización para garantizar un rendimiento óptimo a lo largo del tiempo.
+                      <span className="font-semibold">Optimización:</span> Actualizaciones y seguridad constantes para un rendimiento óptimo.
                     </div>
                   </li>
                 </ul>
-                <div className="mt-8">
+                <div className="mt-8 flex flex-wrap items-center gap-4">
                   <a
                     href="#portfolio"
                     className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white text-black hover:bg-white/90 transition-colors"
                   >
                     Ver Portfolio
                   </a>
+                  <QuoteButton href="#contacto" size="lg" variant="accent" />
                 </div>
               </div>
-              <div className="relative min-h-[320px] lg:min-h-[520px]">
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#3debd6]/30 via-[#0ea5e9]/10 to-transparent" />
+              <div className="relative lg:col-span-7 min-h-[360px] lg:min-h-[620px]">
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#3debd6]/25 via-[#0ea5e9]/10 to-transparent" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-[85%] h-[70%] rounded-2xl bg-gradient-to-br from-white/10 to-white/0 border border-white/10 shadow-[0_0_60px_rgba(255,255,255,0.08)]" />
+                  <div className="w-[96%] h-[82%] rounded-3xl bg-gradient-to-br from-white/10 to-white/0 border border-white/10 shadow-[0_0_90px_rgba(255,255,255,0.12)]" />
                 </div>
               </div>
             </div>
           </div>
         </motion.div>
-      </div> <br /><br />
-      <QuoteButton onClick={() => console.log("cotizar")} />
+      </div> 
+      
        {/* Bottom Text */}
        <motion.div
         initial={{ opacity: 0 }}
