@@ -6,6 +6,7 @@ import Services from "@/components/Services";
 import Process from "@/components/Process";
 import Showcase from "@/components/Showcase";
 import Pricing from "@/components/Pricing";
+import Team from "@/components/Team";
 import Testimonials from "@/components/Testimonials";
 
 import SiteHeader from "@/components/SiteHeader";
@@ -41,7 +42,7 @@ export default function Home() {
       case "proyectos":
         return <Showcase />;
       case "nosotros":
-        return <Testimonials />;
+        return <Team />;
       
     }
   };
