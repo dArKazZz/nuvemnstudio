@@ -7,7 +7,7 @@ import Process from "@/components/Process";
 import Showcase from "@/components/Showcase";
 import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
-import CTA from "@/components/CTA";
+
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 
