@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import QuoteButton from "@/components/QuoteButton";
 import { 
   University, 
   Store, 
@@ -158,6 +159,10 @@ export default function Services() {
                                                 </span>
                                             ))}
                                         </div>
+
+                                        <div className="mt-6">
+                                          <QuoteButton href="#contacto" size="md" variant="accent" />
+                                        </div>
                                     </div>
 
                                     {/* Visual Widget on the Right */}
@@ -195,6 +200,10 @@ export default function Services() {
                                             </span>
                                         ))}
                                 </div>
+                                </div>
+
+                                <div className="mt-6">
+                                  <QuoteButton href="#contacto" size="md" variant="accent" />
                                 </div>
                             </>
                         )}

@@ -36,7 +36,7 @@ export default function Home() {
           <>
             <Services />
             <Process />
-            {/* <Pricing /> */}
+            
           </>
         );
       case "proyectos":
