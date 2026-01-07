@@ -27,7 +27,7 @@ export default function Home() {
         return (
           <>
             <Hero />
-            <Showcase />
+            
           </>
         );
       case "servicios":
