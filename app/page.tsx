@@ -52,7 +52,6 @@ export default function Home() {
       <main className="min-h-[calc(100vh-200px)]">
         {renderContent()}
       </main>
-      <CTA />
       <SiteFooter />
     </div>
   );
