@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   title: "Nuvemn Studio",
   description:
     "Nuvemn Studio crea sitios web a medida para impulsar marcas con presencia digital moderna.",
+  icons: {
+    icon: "/logonegro.svg",
+  },
 };
 
 export default function RootLayout({
