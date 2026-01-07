@@ -5,26 +5,26 @@ import { Code, Rocket, Database, Globe } from "lucide-react";
 const steps = [
   {
     number: "01",
-    title: "DATA INGESTION",
-    description: "We connect to your existing data pipelines and establish secure read-only access.",
+    title: "RECOLECCIÓN DE INFORMACIÓN",
+    description: "Reunión inicial, comprensión de objetivos y análisis de requisitos.",
     icon: Database,
   },
   {
     number: "02",
-    title: "MODEL TRAINING",
-    description: "Our proprietary algorithms train on your dataset to identify growth patterns.",
+    title: "PLANIFICACIÓN",
+    description: "Briefing de negocio, arquitectura técnica y roadmap del proyecto.",
     icon: Code,
   },
   {
     number: "03",
-    title: "DEPLOYMENT",
-    description: "Live activation of optimization agents across your chosen channels.",
+    title: "DISEÑO E IMPLEMENTACIÓN",
+    description: "Prototipos interactivos y desarrollo ágil basado en sprints.",
     icon: Globe,
   },
   {
     number: "04",
-    title: "SCALING",
-    description: "Automatic resource allocation based on performance metrics.",
+    title: "LANZAMIENTO Y MONITOREO",
+    description: "Prueba de lanzamiento, despliegue y optimización continua.",
     icon: Rocket,
   },
 ];
@@ -35,7 +35,7 @@ export default function Process() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="mb-20">
             <h2 className="font-display text-4xl md:text-6xl font-light uppercase tracking-wide mb-4">
-                Deployment Protocol
+                Proceso Desarrollo
             </h2>
             <div className="h-1 w-20 bg-[var(--accent-primary)]" />
         </div>
@@ -46,7 +46,7 @@ export default function Process() {
                     <div className="mb-6 opacity-30 group-hover:opacity-100 transition-opacity duration-300">
                         <step.icon size={32} />
                     </div>
-                    <div className="text-6xl font-display font-bold text-white/5 mb-4 group-hover:text-white/10 transition-colors">
+                    <div className="text-6xl font-display font-bold text-white/80 mb-4 group-hover:text-white/100 transition-colors">
                         {step.number}
                     </div>
                     <h3 className="text-xl font-mono uppercase tracking-widest mb-4 text-[var(--accent-primary)]">

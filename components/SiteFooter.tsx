@@ -7,7 +7,7 @@ export default function SiteFooter() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
           
           <div className="col-span-1 md:col-span-1">
-             <h3 className="font-display text-2xl font-bold tracking-widest mb-6">ROAR<span className="text-[var(--accent-primary)]">.AI</span></h3>
+             <h3 className="font-display text-2xl font-bold tracking-widest mb-6">Nuvemn<span className="text-[var(--accent-primary)]"> Studio</span></h3>
              <p className="font-mono text-xs text-white/40 leading-relaxed uppercase">
                Automated business excellence.<br />
                San Francisco, CA<br />

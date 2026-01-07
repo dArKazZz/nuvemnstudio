@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
-import { 
+import {
   Home,
   Briefcase,
   Layers,
@@ -29,7 +29,7 @@ export default function SiteHeader({ activeTab, setActiveTab }: SiteHeaderProps)
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <motion.header 
+    <motion.header
       className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-black/20 backdrop-blur-md"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
@@ -38,22 +38,27 @@ export default function SiteHeader({ activeTab, setActiveTab }: SiteHeaderProps)
       <div className="mx-auto max-w-6xl px-6">
         <nav className="flex items-center justify-between py-4">
           {/* Logo */}
-          <motion.button 
+          <motion.button
             onClick={() => setActiveTab("inicio")}
             className="flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-black">
-              <span className="font-display text-xs font-bold">NS</span>
+            <div className="flex h-18 w-18 items-center justify-center ">
+              <img src="/LOGO.svg" alt="Nuvemn Studio Logo" className="h-18 w-18" />
             </div>
-            <span className="font-display text-lg font-bold text-white">
+            <div className="flex flex-col items-end leading-tight">
+              <span className="font-display text-lg font-bold text-white">
               Nuvemn
-            </span>
+              </span>
+              <span className="font-display text-md font-regular text-white -mt-1">
+              Studio
+              </span>
+            </div>
           </motion.button>
 
           {/* Desktop Navigation - Tabs */}
-          <motion.div 
+          <motion.div
             className="hidden items-center gap-1 rounded-full border border-white/10 bg-white/5 px-2 py-1.5 backdrop-blur-lg md:flex"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -63,11 +68,10 @@ export default function SiteHeader({ activeTab, setActiveTab }: SiteHeaderProps)
               <motion.button
                 key={link.label}
                 onClick={() => setActiveTab(link.tab)}
-                className={`relative flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition ${
-                  activeTab === link.tab
+                className={`relative flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition ${activeTab === link.tab
                     ? "bg-white text-black"
                     : "text-white/60 hover:text-white hover:bg-white/10"
-                }`}
+                  }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, y: -10 }}
@@ -106,7 +110,7 @@ export default function SiteHeader({ activeTab, setActiveTab }: SiteHeaderProps)
         {/* Mobile Menu */}
         <AnimatePresence>
           {mobileOpen && (
-            <motion.div 
+            <motion.div
               className="absolute left-0 right-0 top-full bg-[#0a0a0a] border-b border-white/10 p-4 md:hidden"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -121,11 +125,10 @@ export default function SiteHeader({ activeTab, setActiveTab }: SiteHeaderProps)
                       setActiveTab(link.tab);
                       setMobileOpen(false);
                     }}
-                    className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition ${
-                      activeTab === link.tab
+                    className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition ${activeTab === link.tab
                         ? "bg-white text-black"
                         : "text-white/60 hover:text-white hover:bg-white/5"
-                    }`}
+                      }`}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.05 }}
