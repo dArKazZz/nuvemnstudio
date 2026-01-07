@@ -2,137 +2,111 @@
 
 import { motion } from "framer-motion";
 import { 
-  TrendingUp, 
-  Palette, 
-  Code, 
-  Settings,
-  ArrowRight,
-  CheckCircle
+  Network, 
+  Database, 
+  ShieldCheck,
+  Zap,
+  Bot
 } from "lucide-react";
 
 const services = [
   {
-    title: "Estrategia Digital",
-    description: "Analizamos tu marca, audiencias y objetivos para construir un roadmap digital con impacto.",
-    icon: TrendingUp,
-    features: ["Análisis de mercado", "Roadmap digital", "KPIs definidos"],
+    title: "NEURAL NETWORKS",
+    description: "Deep learning algorithms that adapt to your business data patterns.",
+    icon: Network,
+    features: ["Pattern Recognition", "Auto-optimization", "Predictive Modeling"],
   },
   {
-    title: "UX/UI a Medida",
-    description: "Interfaces elegantes y funcionales que reflejan tu identidad y convierten visitantes en clientes.",
-    icon: Palette,
-    features: ["Diseño responsive", "Prototipado", "Testing de usuarios"],
+    title: "AI AUTOMATION",
+    description: "End-to-end workflow automation powered by intelligent agents.",
+    icon: Bot,
+    features: ["Chatbots", "Process Mining", "Decision Automation"],
   },
   {
-    title: "Desarrollo Web",
-    description: "Sitios rápidos, escalables y listos para crecer, optimizados para SEO y rendimiento.",
-    icon: Code,
-    features: ["Next.js & React", "SEO optimizado", "Alto rendimiento"],
+    title: "DATA INFRASTRUCTURE",
+    description: "Scalable data lakes and real-time processing pipelines.",
+    icon: Database,
+    features: ["Low Latency", "High Availability", "Secure Storage"],
   },
   {
-    title: "Evolución Continua",
-    description: "Acompañamiento post-lanzamiento con mejoras, métricas y nuevas funcionalidades.",
-    icon: Settings,
-    features: ["Mantenimiento", "Analytics", "Mejoras continuas"],
+    title: "CYBER DEFENSE",
+    description: "Proactive threat detection using anomaly scoring.",
+    icon: ShieldCheck,
+    features: ["Zero Trust", "Real-time Monitoring", "Threat Intel"],
   },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.1 },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] as const },
-  },
-};
-
 export default function Services() {
   return (
-    <section id="servicios" className="px-6 py-16">
-      <div className="mx-auto max-w-6xl">
+    <section id="servicios" className="px-6 py-24 bg-black relative">
+       {/* Accents */}
+      <div className="absolute right-0 top-0 w-1/3 h-[500px] bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-[var(--accent-glow)]/20 via-black/0 to-transparent pointer-events-none" />
+
+      <div className="mx-auto max-w-7xl relative z-10">
         {/* Header */}
         <motion.div 
-          className="mb-12 max-w-2xl"
+          className="mb-20 flex flex-col md:flex-row md:items-end justify-between border-b border-white/10 pb-8"
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-[var(--nuvem-700)] shadow-sm">
-            <span className="h-2 w-2 rounded-full bg-[var(--nuvem-500)]"></span>
-            Servicios
-          </div>
-          <h2 className="font-display text-3xl font-bold text-[var(--nuvem-950)] md:text-4xl">
-            Todo lo que necesitas para brillar online
-          </h2>
-          <p className="mt-4 text-lg text-[var(--nuvem-700)]">
-            Combinamos estrategia, creatividad y tecnología para lanzar sitios únicos que elevan tu marca.
-          </p>
+           <div>
+            <h2 className="font-display text-4xl md:text-6xl font-light text-white mb-2 uppercase tracking-wide">
+                Capabilities
+            </h2>
+            <p className="font-mono text-sm tracking-widest text-[var(--accent-primary)]">
+                / SYSTEMS / MODULES / CORE
+            </p>
+           </div>
+           
+           <div className="hidden md:block text-right">
+             <p className="text-white/40 text-sm max-w-xs">
+                 Deploy enterprise-grade AI modules into your existing stack with zero friction.
+             </p>
+           </div>
         </motion.div>
 
         {/* Services Grid */}
-        <motion.div 
-          className="grid gap-6 md:grid-cols-2"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          {services.map((service, index) => (
-            <motion.div
-              key={service.title}
-              variants={cardVariants}
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              className="group rounded-2xl bg-white p-8 shadow-sm transition-shadow hover:shadow-lg"
-            >
-              <div className="mb-6 flex items-start justify-between">
-                <motion.div 
-                  className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--nuvem-100)] transition group-hover:bg-[var(--nuvem-500)]"
-                  whileHover={{ rotate: [0, -10, 10, 0], transition: { duration: 0.5 } }}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {services.map((service, index) => (
+                <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1, duration: 0.5 }}
+                    className="group relative p-10 border border-white/10 bg-white/5 hover:bg-white/10 transition-colors duration-300"
                 >
-                  <service.icon 
-                    size={28} 
-                    strokeWidth={1.5} 
-                    className="text-[var(--nuvem-600)] transition group-hover:text-white" 
-                  />
-                </motion.div>
-                <ArrowRight 
-                  size={20} 
-                  strokeWidth={2} 
-                  className="text-[var(--nuvem-300)] transition group-hover:translate-x-1 group-hover:text-[var(--nuvem-600)]" 
-                />
-              </div>
-              
-              <h3 className="font-display text-xl font-bold text-[var(--nuvem-950)]">
-                {service.title}
-              </h3>
-              <p className="mt-3 text-[var(--nuvem-700)]">
-                {service.description}
-              </p>
+                    {/* Hover Glow */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/5 to-transparent pointer-events-none" />
 
-              <div className="mt-6 flex flex-wrap gap-2">
-                {service.features.map((feature, featureIndex) => (
-                  <motion.span
-                    key={feature}
-                    className="inline-flex items-center gap-1.5 rounded-full bg-[var(--nuvem-50)] px-3 py-1.5 text-xs font-medium text-[var(--nuvem-700)]"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.3 + featureIndex * 0.1 }}
-                  >
-                    <CheckCircle size={14} strokeWidth={2} className="text-[var(--nuvem-500)]" />
-                    {feature}
-                  </motion.span>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+                    <div className="mb-8 flex justify-between items-start">
+                        <div className="p-3 bg-white/5 border border-white/5 rounded-sm">
+                            <service.icon size={24} className="text-white relative z-10" />
+                        </div>
+                        <span className="font-mono text-xs text-white/30">0{index+1}</span>
+                    </div>
+                    
+                    <h3 className="font-display text-2xl text-white mb-4 uppercase tracking-wide">
+                        {service.title}
+                    </h3>
+                    
+                    <p className="text-white/60 mb-8 leading-relaxed h-[60px]">
+                        {service.description}
+                    </p>
+
+                    <ul className="space-y-3 border-t border-white/10 pt-6">
+                        {service.features.map((feature, i) => (
+                            <li key={i} className="flex items-center gap-2 text-sm text-[var(--accent-primary)] font-mono">
+                                <Zap size={12} />
+                                <span className="text-white/70">{feature}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </motion.div>
+            ))}
+        </div>
       </div>
     </section>
   );

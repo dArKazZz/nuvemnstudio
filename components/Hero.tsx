@@ -1,249 +1,101 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  ArrowRight, 
-  Sparkles,
-  Star,
-  Zap,
-  Globe,
-  Code
-} from "lucide-react";
-
-const floatingCardVariants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: (delay: number) => ({
-    opacity: 1,
-    scale: 1,
-    transition: {
-      delay,
-      duration: 0.5,
-      ease: [0.25, 0.46, 0.45, 0.94] as const,
-    },
-  }),
-};
+import { Users, Zap, BarChart3 } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden px-6 pb-12 pt-8">
-      <div className="mx-auto max-w-6xl">
-        {/* Hero Card with Image */}
-        <motion.div 
-          className="relative overflow-hidden rounded-[32px]"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+    <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-32 pb-12 overflow-hidden bg-black text-white">
+      {/* Background Ambience */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[100vw] h-[600px] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-[var(--color-gold-glow)] via-black/0 to-transparent pointer-events-none opacity-40 mix-blend-screen" />
+      
+      <div className="absolute inset-0 bg-grid opacity-20 pointer-events-none" />
+
+      {/* Glowing Ring Effect */}
+      <div className="absolute top-[-20%] left-1/2 -translate-x-1/2 w-[120%] aspect-square rounded-full border border-[var(--color-gold-600)] shadow-[0_0_100px_rgba(212,175,55,0.15)] opacity-40 pointer-events-none" />
+      <div className="absolute top-[-15%] left-1/2 -translate-x-1/2 w-[110%] aspect-square rounded-full border border-[var(--color-gold-500)] opacity-20 pointer-events-none animate-pulse" />
+
+      <div className="container relative z-10 mx-auto px-6 max-w-7xl flex flex-col items-center text-center">
+        
+        {/* Main Title */}
+        <motion.div
+           initial={{ opacity: 0, y: 30 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.8, ease: "easeOut" }}
+           className="relative z-20"
         >
-          {/* Background Image */}
-          <div 
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-            style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2074&auto=format&fit=crop')`,
-            }}
-          />
-          {/* Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-[var(--nuvem-100)]/95 via-[var(--nuvem-50)]/90 to-[var(--nuvem-200)]/95" />
-          
-          {/* Floating Cards */}
-          <motion.div 
-            className="pointer-events-none absolute -right-4 top-20 hidden rotate-6 md:block"
-            variants={floatingCardVariants}
-            initial="hidden"
-            animate="visible"
-            custom={0.4}
-          >
-            <motion.div 
-              className="rounded-2xl bg-white/80 p-4 shadow-xl backdrop-blur-sm"
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--nuvem-500)]">
-                  <Globe size={20} className="text-white" />
-                </div>
-                <div>
-                  <p className="text-xs text-[var(--nuvem-600)]">Sitios Activos</p>
-                  <p className="font-display font-bold text-[var(--nuvem-950)]">+150</p>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-          
-          <motion.div 
-            className="pointer-events-none absolute -left-4 bottom-32 hidden -rotate-6 md:block"
-            variants={floatingCardVariants}
-            initial="hidden"
-            animate="visible"
-            custom={0.6}
-          >
-            <motion.div 
-              className="rounded-2xl bg-white/80 p-4 shadow-xl backdrop-blur-sm"
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--nuvem-400)]">
-                  <Zap size={20} className="text-white" />
-                </div>
-                <div>
-                  <p className="text-xs text-[var(--nuvem-600)]">Performance</p>
-                  <p className="font-display font-bold text-[var(--nuvem-950)]">99/100</p>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
+            <h1 className="font-display font-light text-6xl md:text-8xl lg:text-9xl leading-[0.9] tracking-tight uppercase text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/60">
+              Algorithm<br />
+              <span className="font-normal text-white drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]">Dominance</span>
+            </h1>
+        </motion.div>
 
-          <motion.div 
-            className="pointer-events-none absolute bottom-10 right-16 hidden rotate-3 md:block"
-            variants={floatingCardVariants}
-            initial="hidden"
-            animate="visible"
-            custom={0.8}
-          >
-            <motion.div 
-              className="rounded-2xl bg-white/80 p-4 shadow-xl backdrop-blur-sm"
-              animate={{ y: [0, -8, 0] }}
-              transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[var(--nuvem-600)]">
-                  <Code size={20} className="text-white" />
-                </div>
-                <div>
-                  <p className="text-xs text-[var(--nuvem-600)]">Tecnología</p>
-                  <p className="font-display font-bold text-[var(--nuvem-950)]">Next.js</p>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* Decorative Stars */}
-          <motion.div 
-            className="pointer-events-none absolute right-1/4 top-10 text-[var(--nuvem-500)] opacity-60"
-            animate={{ rotate: 360, scale: [1, 1.2, 1] }}
-            transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-          >
-            <Star size={24} strokeWidth={2} fill="currentColor" />
-          </motion.div>
-          <motion.div 
-            className="pointer-events-none absolute bottom-20 left-1/4 text-[var(--nuvem-400)] opacity-60"
-            animate={{ rotate: -360, scale: [1, 1.3, 1] }}
-            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-          >
-            <Star size={16} strokeWidth={2} fill="currentColor" />
-          </motion.div>
-          <motion.div 
-            className="pointer-events-none absolute right-10 top-1/3 text-[var(--nuvem-600)] opacity-40"
-            animate={{ rotate: 360 }}
-            transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
-          >
-            <Star size={20} strokeWidth={2} fill="currentColor" />
-          </motion.div>
-
-          {/* Content */}
-          <div className="relative z-10 px-8 py-20 md:px-16 md:py-28">
-            <div className="mx-auto max-w-3xl text-center">
-              {/* Badge */}
-              <motion.div 
-                className="mb-6 inline-flex items-center gap-2 rounded-full bg-white/80 px-4 py-2 text-sm font-medium text-[var(--nuvem-700)] shadow-sm backdrop-blur-sm"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-              >
-                <span className="h-2 w-2 rounded-full bg-[var(--nuvem-500)]"></span>
-                <Sparkles size={16} strokeWidth={2} />
-                Estudio Creativo Digital
-              </motion.div>
-
-              {/* Heading */}
-              <motion.h1 
-                className="font-display text-4xl font-bold leading-tight text-[var(--nuvem-950)] md:text-5xl lg:text-6xl"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.5 }}
-              >
-                Impulsa tu marca con una web a tu medida
-              </motion.h1>
-
-              {/* Description */}
-              <motion.p 
-                className="mx-auto mt-6 max-w-xl text-lg text-[var(--nuvem-800)]"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.5 }}
-              >
-                Diseñamos experiencias digitales que conectan con tu audiencia y 
-                transforman visitantes en clientes. Creamos sitios web únicos con 
-                personalidad y resultados.
-              </motion.p>
-
-              {/* CTA Buttons */}
-              <motion.div 
-                className="mt-8 flex flex-wrap items-center justify-center gap-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.5 }}
-              >
-                <motion.a
-                  href="#contacto"
-                  className="inline-flex items-center gap-2 rounded-full bg-[var(--nuvem-600)] px-6 py-3.5 text-sm font-semibold text-white shadow-lg transition hover:bg-[var(--nuvem-700)] hover:shadow-xl"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Iniciar Proyecto
-                  <ArrowRight size={18} strokeWidth={2} />
-                </motion.a>
-                <motion.a
-                  href="#proyectos"
-                  className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-sm font-semibold text-[var(--nuvem-900)] shadow-lg transition hover:shadow-xl"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Ver Proyectos
-                </motion.a>
-              </motion.div>
-
-              {/* Trust Badges */}
-              <motion.div 
-                className="mt-12 flex flex-wrap items-center justify-center gap-8"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.7, duration: 0.5 }}
-              >
-                <div className="flex items-center gap-2 text-sm text-[var(--nuvem-700)]">
-                  <div className="flex -space-x-2">
-                    {[1, 2, 3, 4].map((i) => (
-                      <motion.div 
-                        key={i} 
-                        className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-white bg-[var(--nuvem-200)]"
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.7 + i * 0.1 }}
-                      >
-                        <span className="text-xs font-medium text-[var(--nuvem-700)]">{String.fromCharCode(64 + i)}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-                  <span>+50 clientes felices</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, scale: 0 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.8 + i * 0.05 }}
-                    >
-                      <Star size={16} strokeWidth={2} className="fill-[var(--nuvem-400)] text-[var(--nuvem-400)]" />
-                    </motion.div>
-                  ))}
-                  <span className="ml-2 text-sm text-[var(--nuvem-700)]">5.0 en Google</span>
-                </div>
-              </motion.div>
-            </div>
+        {/* Subtitle Section */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          className="mt-12 flex flex-col md:flex-row items-center gap-6 md:gap-12 relative z-20"
+        >
+          <div className="flex items-center gap-3 px-4 py-2 border border-white/10 rounded-full bg-white/5 backdrop-blur-sm">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+            <span className="text-xs font-mono tracking-widest uppercase text-white/70">AI Status: Optimizing</span>
           </div>
+          
+          <h2 className="text-xl md:text-2xl font-light text-white/90">
+            Automated Business Growth Strategies
+          </h2>
+        </motion.div>
+
+        <motion.p
+           initial={{ opacity: 0 }}
+           animate={{ opacity: 1 }}
+           transition={{ delay: 0.6, duration: 0.8 }}
+           className="mt-6 max-w-lg text-white/50 text-sm md:text-base leading-relaxed text-balance"
+        >
+          We leverage predictive AI to grow your social presence, automate engagement, and turn attention into revenue.
+        </motion.p>
+      
+        {/* Stats Grid */}
+        <motion.div 
+           initial={{ opacity: 0, y: 40 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ delay: 0.8, duration: 0.8 }}
+           className="grid grid-cols-1 md:grid-cols-3 w-full max-w-5xl mt-24 border-t border-white/10 relative z-20 bg-black/50 backdrop-blur-sm"
+        >
+          {[
+            { label: "Reach Lift", value: "+400%", icon: Users },
+            { label: "Leads Generated", value: "12.5k", icon: BarChart3 },
+            { label: "Execution Speed", value: "10x", icon: Zap }
+          ].map((stat, i) => (
+            <div key={i} className="relative p-8 border-b md:border-b-0 md:border-r last:border-r-0 border-white/10 group hover:bg-white/5 transition-colors duration-300">
+               <div className="flex justify-between items-start mb-8">
+                 <span className="text-white/30"><stat.icon size={20} /></span> 
+                 <span className="text-[10px] font-mono text-green-500 border border-green-500/30 px-1 py-0.5 rounded">LIVE</span>
+               </div>
+               <div className="absolute top-4 right-4 w-1.5 h-1.5 bg-white/20 rounded-full" />
+               <div className="text-4xl md:text-5xl lg:text-6xl font-display font-light tracking-tighter mb-2 text-white">
+                 {stat.value}
+               </div>
+               <div className="text-xs font-mono tracking-widest uppercase text-white/40">
+                 {stat.label}
+               </div>
+            </div>
+          ))}
         </motion.div>
       </div>
+
+       {/* Bottom Text */}
+       <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 1 }} 
+        className="container max-w-4xl mx-auto px-6 mt-24 text-center pb-20 relative z-20"
+       >
+         <h3 className="text-xl md:text-3xl font-light leading-relaxed text-white/80">
+            STOP GUESSING. START <span className="inline-block px-2 py-0 border border-white/20 bg-white/5 mx-1 align-middle">SCALING</span> WITH OUR <span className="bg-white text-black px-2 font-bold inline-block mx-1">NEURAL ENGINE</span> THAT TURNS CONTENT INTO PREDICTABLE REVENUE.
+         </h3>
+       </motion.div>
     </section>
   );
 }

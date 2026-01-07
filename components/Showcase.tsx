@@ -1,170 +1,120 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
-  ArrowUpRight,
-  ShoppingBag,
-  Globe,
-  PenTool
-} from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 
 const projects = [
   {
-    name: "Aether Beauty",
-    category: "E-commerce Premium",
-    description: "Rediseño completo con foco en narrativa visual y checkout optimizado.",
-    tags: ["Branding", "UX/UI", "SEO"],
-    icon: ShoppingBag,
-    image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=2087&auto=format&fit=crop",
+    name: "VERTICAL SCALE",
+    category: "Mobile",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop",
+    stats: "+400% ROI"
   },
   {
-    name: "Cloudshore",
-    category: "SaaS B2B",
-    description: "Landing modular con storytelling para captación de leads calificados.",
-    tags: ["Estrategia", "CRO", "Performance"],
-    icon: Globe,
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop",
+    name: "GLOBAL REACH",
+    category: "Social",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1887&auto=format&fit=crop",
+    stats: "2.5M Views"
   },
   {
-    name: "Luma Atelier",
-    category: "Estudio Creativo",
-    description: "Web portfolio con experiencias inmersivas y microinteracciones sutiles.",
-    tags: ["Diseño", "Animación", "Motion"],
-    icon: PenTool,
-    image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?q=80&w=2064&auto=format&fit=crop",
+    name: "NEURAL CLONE",
+    category: "AI",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1888&auto=format&fit=crop",
+    stats: "98% Match"
   },
+  {
+    name: "DATA FUSION",
+    category: "Analytics",
+    image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1888&auto=format&fit=crop",
+    stats: "Real-time"
+  }
 ];
-
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15 },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] as const },
-  },
-};
 
 export default function Showcase() {
   return (
-    <section id="proyectos" className="px-6 py-16">
-      <div className="mx-auto max-w-6xl">
-        {/* Header */}
-        <motion.div 
-          className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <div>
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-sm font-medium text-[var(--nuvem-700)] shadow-sm">
-              <span className="h-2 w-2 rounded-full bg-[var(--nuvem-500)]"></span>
-              Proyectos
-            </div>
-            <h2 className="font-display text-3xl font-bold text-[var(--nuvem-950)] md:text-4xl">
-              Proyectos destacados
-            </h2>
-            <p className="mt-4 max-w-xl text-lg text-[var(--nuvem-700)]">
-              Cada sitio es una colaboración estratégica con objetivos claros.
-            </p>
-          </div>
-          <motion.a
-            href="#"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--nuvem-600)] transition hover:gap-3 hover:text-[var(--nuvem-700)]"
-            whileHover={{ x: 5 }}
-          >
-            Ver todos los proyectos
-            <ArrowUpRight size={16} strokeWidth={2} />
-          </motion.a>
-        </motion.div>
-
-        {/* Projects Grid */}
-        <motion.div 
-          className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          {projects.map((project, index) => (
-            <motion.article
-              key={project.name}
-              variants={cardVariants}
-              whileHover={{ y: -8, transition: { duration: 0.2 } }}
-              className="group cursor-pointer overflow-hidden rounded-2xl bg-white shadow-sm transition-shadow hover:shadow-xl"
-            >
-              {/* Project Image */}
-              <div className="relative h-56 overflow-hidden">
-                <motion.img 
-                  src={project.image} 
-                  alt={project.name}
-                  className="h-full w-full object-cover"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.5 }}
-                />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[var(--nuvem-950)]/60 via-transparent to-transparent opacity-0 transition group-hover:opacity-100" />
-                
-                {/* Icon Badge */}
-                <motion.div 
-                  className="absolute left-4 top-4"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.2 + index * 0.1 }}
+    <section className="py-24 bg-black text-white relative overflow-hidden" id="proyectos">
+      
+      {/* Section Header */}
+      <div className="container mx-auto px-6 mb-16">
+        <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-white/10 pb-8">
+            <div>
+                <motion.h2 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    className="font-display text-5xl md:text-7xl font-light uppercase tracking-tighter mb-2"
                 >
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/90 shadow-lg backdrop-blur-sm">
-                    <project.icon size={20} strokeWidth={1.5} className="text-[var(--nuvem-600)]" />
-                  </div>
-                </motion.div>
+                    Outputs
+                </motion.h2>
+                <motion.p 
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 }}
+                    className="font-mono text-sm tracking-widest text-white/50"
+                >
+                    / CASE STUDIES / SOCIAL ROI
+                </motion.p>
+            </div>
+            
+            <div className="hidden md:block">
+               <div className="flex items-center gap-2 text-xs font-mono text-white/40">
+                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                 LIVE DATA FEED
+               </div>
+            </div>
+        </div>
+      </div>
+
+      {/* Horizontal Scroll Area */}
+      <div className="container mx-auto px-6 overflow-x-auto pb-12 hide-scrollbar">
+        <div className="flex gap-6 min-w-max">
+          {projects.map((project, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1, duration: 0.6 }}
+              className="relative w-[300px] md:w-[400px] h-[500px] group cursor-pointer"
+            >
+              {/* Card Image */}
+              <div className="absolute inset-0 overflow-hidden rounded-sm">
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity" />
+                <Image 
+                    src={project.image} 
+                    alt={project.name}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110 grayscale-[0.2] group-hover:grayscale-0"
+                />
+              </div>
+
+              {/* Overlay Content */}
+              <div className="absolute inset-0 z-20 p-8 flex flex-col justify-between">
+                <div className="flex justify-between items-start">
+                    <span className="text-[10px] uppercase tracking-widest border border-white/20 px-2 py-1 bg-black/20 backdrop-blur-md text-white/80">
+                        {project.category}
+                    </span>
+                    <ArrowUpRight className="text-white opacity-0 -translate-x-2 translate-y-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-300" />
+                </div>
                 
-                {/* Arrow Button */}
-                <div className="absolute right-4 top-4">
-                  <motion.div 
-                    className="flex h-10 w-10 items-center justify-center rounded-full bg-white/90 opacity-0 shadow-lg backdrop-blur-sm transition group-hover:opacity-100"
-                    whileHover={{ rotate: 45 }}
-                  >
-                    <ArrowUpRight size={18} strokeWidth={2} className="text-[var(--nuvem-700)]" />
-                  </motion.div>
+                <div>
+                    <h3 className="font-display text-2xl uppercase tracking-wider mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                        {project.name}
+                    </h3>
+                    <div className="h-[1px] w-0 group-hover:w-full bg-white/50 transition-all duration-500 mb-2" />
+                    <p className="font-mono text-xs text-[var(--accent-primary)] opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
+                        {project.stats}
+                    </p>
                 </div>
               </div>
-
-              {/* Project Info */}
-              <div className="p-6">
-                <p className="text-xs font-semibold uppercase tracking-wider text-[var(--nuvem-500)]">
-                  {project.category}
-                </p>
-                <h3 className="mt-2 font-display text-xl font-bold text-[var(--nuvem-950)]">
-                  {project.name}
-                </h3>
-                <p className="mt-2 text-sm text-[var(--nuvem-700)]">
-                  {project.description}
-                </p>
-
-                {/* Tags */}
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {project.tags.map((tag, tagIndex) => (
-                    <motion.span
-                      key={tag}
-                      className="rounded-full bg-[var(--nuvem-50)] px-3 py-1 text-xs font-medium text-[var(--nuvem-700)]"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.3 + tagIndex * 0.05 }}
-                      whileHover={{ scale: 1.05, backgroundColor: "var(--nuvem-100)" }}
-                    >
-                      {tag}
-                    </motion.span>
-                  ))}
-                </div>
-              </div>
-            </motion.article>
+              
+              {/* Border Glitch Effect on Hover (Optional css trick) */}
+              <div className="absolute inset-0 border border-white/0 group-hover:border-white/20 transition-colors duration-300 pointer-events-none" />
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
