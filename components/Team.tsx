@@ -17,8 +17,8 @@ const team = [
   {
     name: 'Marco Chacón',
     role: 'CEO & Founder',
-    image: 'https://placehold.co/400x400/101010/ffffff?text=MC',
-    bio: 'Arquitecto de software experto en tecnologías modernas. Especialista en crear sistemas escalables, robustos y experiencias de usuario fluidas.',
+    image: 'https://media.licdn.com/dms/image/v2/D4E03AQG-cdw37Y-Gww/profile-displayphoto-scale_400_400/B4EZuAl1TzI0Ag-/0/1767388960509?e=1769644800&v=beta&t=lXUJ11k1oOh_0p_T46cDCDQqWZ8H5V8zjAA1RFDrD3A',
+    bio: 'Estudiante de Ingeniería de Sistemas con pasión por el Desarrollo Web y especializado en Desarrollo Móvil. Apasionado por crear soluciones digitales innovadoras que transformen ideas en realidades tangibles.',
     socials: {
       twitter: '#',
       linkedin: '#',
@@ -41,7 +41,7 @@ const values = [
   },
   {
     title: 'Confianza tecnica',
-    description: 'Construimos con bases solidas: performance, SEO y escalabilidad desde el inicio.',
+    description: 'Construimos con bases solidas: performance y escalabilidad desde el inicio.',
     Icon: ShieldCheck
   }
 ];
