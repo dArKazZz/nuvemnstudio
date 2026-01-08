@@ -27,7 +27,7 @@ export default function Home() {
       case "inicio":
         return (
           <>
-            <Hero />
+            <Hero setActiveTab={setActiveTab} />
             
           </>
         );

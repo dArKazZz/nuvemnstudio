@@ -34,7 +34,7 @@ export default function QuoteButton({ href, onClick, className = "", size = "md"
 
   if (href) {
     return (
-      <Link href={href} className={wrapper}>
+      <Link href="https://wa.link/0ancyj" className={wrapper}>
         {variant === "accent" && (
           <span className="absolute inset-0 p-[2px] rounded-full bg-[conic-gradient(from_0deg,var(--accent-primary),white,var(--accent-primary),white,var(--accent-primary))] opacity-60" />
         )}

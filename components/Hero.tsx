@@ -3,8 +3,13 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import QuoteButton from "@/components/QuoteButton";
+import type { TabType } from "@/app/page";
 
-export default function Hero() {
+interface HeroProps {
+  setActiveTab: (tab: TabType) => void;
+}
+
+export default function Hero({ setActiveTab }: HeroProps) {
   return (
     <section className="relative min-h-[90vh] flex flex-col items-center justify-center pt-32 pb-12 overflow-hidden bg-black text-white">
       {/* Background Ambience */}
@@ -87,12 +92,13 @@ export default function Hero() {
                   </li>
                 </ul>
                 <div className="mt-8 flex flex-wrap items-center gap-4">
-                  <a
-                    href="#portfolio"
+                  <button
+                    type="button"
+                    onClick={() => setActiveTab("proyectos")}
                     className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white text-black hover:bg-white/90 transition-colors"
                   >
                     Ver Portfolio
-                  </a>
+                  </button>
                   <QuoteButton href="#contacto" size="lg" variant="accent" />
                 </div>
               </div>

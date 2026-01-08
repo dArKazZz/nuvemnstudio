@@ -73,7 +73,7 @@ export default function SiteFooter({ activeTab, setActiveTab }: SiteFooterProps)
         
         <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
            <p className="font-mono text-xs text-white/20 uppercase tracking-widest">
-             © 2026 Nuvemn Studio. Todos los sistemas funcionales.
+             © 2026 Nuvemn Studio. Todos los derechos reservados.
            </p>
            <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
