@@ -61,12 +61,12 @@ export default function Hero({ setActiveTab }: HeroProps) {
           transition={{ delay: 0.8, duration: 0.8 }}
           className="w-full max-w-7xl mt-24 relative z-20"
         >
-          <div className="rounded-3xl border border-white/10 bg-black/40 backdrop-blur-md shadow-[0_20px_80px_rgba(0,0,0,0.6)] overflow-hidden">
+          <div className="rounded-3xl border border-white/10 bg-black/40 backdrop-blur-md shadow-[0_20px_80px_rgba(0,0,0,0.6)]">
             <div className="grid grid-cols-1 lg:grid-cols-12">
               <div className="p-8 md:p-12 lg:col-span-5 text-left">
                 <div className="text-xs tracking-widest font-mono text-white/60 mb-4">CASOS DE ÉXITO</div>
                 <h3 className="font-display text-4xl md:text-5xl lg:text-6xl font-light text-white mb-6">
-                  Porfolio <span className="italic">web</span>
+                  Portfolio <span className="italic">web</span>
                 </h3>
                 <p className="text-white/80 leading-relaxed mb-6">
                   Tu presencia online impulsa tu negocio. Creamos sitios nuevos, renovamos los que ya tienes y mantenemos todo funcionando para que siempre rinda.
@@ -102,10 +102,7 @@ export default function Hero({ setActiveTab }: HeroProps) {
                   <QuoteButton href="#contacto" size="lg" variant="accent" />
                 </div>
               </div>
-              <div className="relative lg:col-span-7 min-h-[360px] lg:min-h-[620px]">
-                {/* Glow de fondo */}
-                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#3debd6]/25 via-[#0ea5e9]/10 to-transparent" />
-
+              <div className="relative lg:col-span-7 min-h-[360px] lg:min-h-[620px] overflow-visible">
                 {/* Composición tipo marketplace (desktop + mobile + tablet) */}
                 {/* Desktop */}
                 <motion.div
