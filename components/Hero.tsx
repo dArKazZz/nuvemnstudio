@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import QuoteButton from "@/components/QuoteButton";
 
 export default function Hero() {
@@ -96,10 +97,67 @@ export default function Hero() {
                 </div>
               </div>
               <div className="relative lg:col-span-7 min-h-[360px] lg:min-h-[620px]">
+                {/* Glow de fondo */}
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#3debd6]/25 via-[#0ea5e9]/10 to-transparent" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-[96%] h-[82%] rounded-3xl bg-gradient-to-br from-white/10 to-white/0 border border-white/10 shadow-[0_0_90px_rgba(255,255,255,0.12)]" />
-                </div>
+
+                {/* Composición tipo marketplace (desktop + mobile + tablet) */}
+                {/* Desktop */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.96 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  whileHover={{ y: -6, scale: 1.01 }}
+                  whileTap={{ y: -2, scale: 0.995 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6 }}
+                  className="absolute top-1/2 left-[47%] -translate-x-1/2 -translate-y-1/2 w-[92%] md:w-[88%] rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-gray-900"
+                >
+                  <Image
+                    src="/projects/4desk.png"
+                    alt="ChatStream Store — Desktop"
+                    width={1200}
+                    height={700}
+                    className="w-full h-auto object-contain object-left"
+                    priority
+                  />
+                </motion.div>
+
+                {/* Mobile (izquierda, frente) */}
+                <motion.div
+                  initial={{ opacity: 0, x: -30, rotate: -10 }}
+                  whileInView={{ opacity: 1, x: 0, rotate: -6 }}
+                  whileHover={{ y: -6, rotate: -5 }}
+                  whileTap={{ y: -2, rotate: -6 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.15 }}
+                  className="absolute top-[62%] left-1 md:left-0 -translate-y-1/2 w-[24%] md:w-[18%] z-20 rounded-[1.5rem] overflow-hidden shadow-2xl border-[4px] border-gray-900 bg-black"
+                >
+                  <Image
+                    src="/projects/4mob.png"
+                    alt="ChatStream Store — Mobile"
+                    width={360}
+                    height={720}
+                    className="w-full h-auto object-contain"
+                  />
+                </motion.div>
+
+                {/* Tablet (derecha, frente) */}
+                <motion.div
+                  initial={{ opacity: 0, x: 30, rotate: 10 }}
+                  whileInView={{ opacity: 1, x: 0, rotate: 6 }}
+                  whileHover={{ y: -6, rotate: 5 }}
+                  whileTap={{ y: -2, rotate: 6 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: 0.3 }}
+                  className="absolute top-[62%] right-1 md:right-0 -translate-y-1/2 w-[46%] md:w-[44%] z-10 rounded-xl overflow-hidden shadow-2xl border-[4px] border-gray-900 bg-gray-900"
+                >
+                  <Image
+                    src="/projects/4tab.png"
+                    alt="ChatStream Store — Tablet"
+                    width={800}
+                    height={600}
+                    className="w-full h-auto object-contain"
+                  />
+                </motion.div>
               </div>
             </div>
           </div>
