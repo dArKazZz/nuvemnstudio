@@ -54,7 +54,7 @@ export default function SiteFooter({ activeTab, setActiveTab }: SiteFooterProps)
              <div className="flex gap-4">
                 {[
                   // { label: "LinkedIn", href: "#", Icon: Linkedin02Icon },
-                  { label: "Facebook", href: "#", Icon: Facebook01Icon },
+                  { label: "Facebook", href: "https://www.facebook.com/profile.php?id=61585986372476", Icon: Facebook01Icon },
                   { label: "WhatsApp", href: "https://wa.link/0ancyj", Icon: WhatsappIcon },
                   { label: "Instagram", href: "https://www.instagram.com/nuvemn_studio/?utm_source=ig_web_button_share_sheet", Icon: InstagramIcon },
                 ].map(({ label, href, Icon }) => (
