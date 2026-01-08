@@ -122,17 +122,6 @@ export default function Team() {
                 {member.bio}
               </p>
 
-              <div className="flex justify-center gap-4">
-                <a href={member.socials.github} className="p-2 bg-white/5 rounded-full hover:bg-white/10 hover:text-white text-gray-400 transition-colors">
-                  <Github className="w-5 h-5" />
-                </a>
-                <a href={member.socials.linkedin} className="p-2 bg-white/5 rounded-full hover:bg-blue-600/20 hover:text-blue-500 text-gray-400 transition-colors">
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a href={member.socials.twitter} className="p-2 bg-white/5 rounded-full hover:bg-sky-500/20 hover:text-sky-400 text-gray-400 transition-colors">
-                  <Twitter className="w-5 h-5" />
-                </a>
-              </div>
             </motion.div>
           ))}
         </div>
