@@ -34,14 +34,14 @@ const services = [
     description: "Vender en línea nunca ha sido tan crucial. Un sitio de e-commerce optimizado no solo mejora la experiencia del usuario, sino que también impulsa las ventas y la fidelización de clientes.",
     icon: Store,
     image: "https://images.unsplash.com/photo-1472851294608-41551b116d48?q=80&w=2670&auto=format&fit=crop",
-    features: ["Catálogo de productos", "Carrito de compras", "Pasarela de pago segura", "Gestión de inventario", "Optimización para SEO", "Reseñas de clientes", "Integración con redes sociales"],
+    features: ["Catálogo de productos", "Carrito de compras", "Pasarela de pago segura", "Gestión de inventario",  "Reseñas de clientes", "Integración con redes sociales"],
   },
   {
     title: "PERSONALIZADO",
     description: "Si tienes necesidades específicas, podemos desarrollar una solución web a medida que se adapte perfectamente a los objetivos y requisitos de tu negocio.",
     icon: User,
     image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2670&auto=format&fit=crop",
-    features: ["Funcionalidades a medida", "Integraciones específicas", "Diseño único", "Optimización para SEO", "Soporte y mantenimiento", "Escalabilidad futura", "Integración con Software o APIs externas"],
+    features: ["Funcionalidades a medida", "Integraciones específicas", "Diseño único",  "Soporte y mantenimiento", "Escalabilidad futura", "Integración con Software o APIs externas"],
   },
 ];
 
@@ -62,7 +62,7 @@ const technicalServices = [
     title: "Rediseño y Migraciones",
     description: "Mejoramos sitios existentes y migramos a tecnologías modernas.",
     icon: RefreshCcw,
-    features: ["Migración a Next.js", "Core Web Vitals", "Mejor SEO"],
+    features: ["Migración a Next.js", "Core Web Vitals"],
   },
   {
     title: "Mantenimiento y Soporte",
