@@ -138,7 +138,7 @@ export default function SiteHeader({ activeTab, setActiveTab }: SiteHeaderProps)
                   </motion.button>
                 ))}
                 <motion.a
-                  href="#contacto"
+                  href="https://wa.link/0ancyj"
                   className="mt-2 rounded-xl bg-white px-4 py-3 text-center text-sm font-semibold text-black hover:bg-gray-200"
                   onClick={() => setMobileOpen(false)}
                   initial={{ opacity: 0, x: -20 }}
