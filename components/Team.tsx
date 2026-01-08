@@ -5,14 +5,13 @@ import { Github, Linkedin, Twitter, Target, Sparkles, ShieldCheck } from 'lucide
 
 const team = [
   {
-    name: 'Joe Villareal',
+    name: 'Joe Villarreal',
     role: 'CEO & Founder',
-    image: 'https://placehold.co/400x400/101010/ffffff?text=JV',
-    bio: 'Líder visionario apasionado por transformar ideas en soluciones digitales de alto impacto. Con experiencia en dirección estratégica y desarrollo de negocios.',
+    image: 'https://media.licdn.com/dms/image/v2/D4E03AQEuNJiymIjS7A/profile-displayphoto-crop_800_800/B4EZm8wZSMHIAM-/0/1759808428166?e=1769644800&v=beta&t=UrWhf-gnZrcW4iNkLYcHQwB2S55q3SNullW8uGX-XNw',
+    bio: 'Líder tecnológico en formación y estudiante de Ingeniería de Sistemas. Me impulsa el reto de transformar conceptos abstractos en realidad digital mediante el Desarrollo Web y la Inteligencia Artificial.',
     socials: {
-      twitter: '#',
-      linkedin: '#',
-      github: '#'
+      linkedin: 'www.linkedin.com/in/joe-villarreal-mejia-763029293',
+      github: 'https://github.com/joestevil'
     }
   },
   {
