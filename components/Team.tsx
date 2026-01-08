@@ -1,8 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter } from 'lucide-react';
-import Image from 'next/image';
+import { Github, Linkedin, Twitter, Target, Sparkles, ShieldCheck } from 'lucide-react';
 
 const team = [
   {
@@ -29,18 +28,37 @@ const team = [
   }
 ];
 
+
+const values = [
+  {
+    title: 'Claridad y enfoque',
+    description: 'Diseñamos experiencias simples que convierten, sin ruido ni piezas innecesarias.',
+    Icon: Target
+  },
+  {
+    title: 'Detalle artesanal',
+    description: 'Cuidamos tipografia, ritmo y microinteracciones para que todo se sienta premium.',
+    Icon: Sparkles
+  },
+  {
+    title: 'Confianza tecnica',
+    description: 'Construimos con bases solidas: performance, SEO y escalabilidad desde el inicio.',
+    Icon: ShieldCheck
+  }
+];
+
 export default function Team() {
   return (
     <section className="py-24 bg-black text-white" id="team">
       <div className="container mx-auto px-6">
-        <div className="max-w-3xl mx-auto text-center mb-20">
+        <div className="max-w-3xl mx-auto text-center mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-bold mb-6"
           >
-            Nuestro Equipo
+            Nosotros
           </motion.h2>
           <motion.div 
             initial={{ opacity: 0, scale: 0.8 }}
@@ -48,6 +66,36 @@ export default function Team() {
             viewport={{ once: true }}
             className="h-1 w-20 bg-blue-500 mx-auto rounded-full"
           />
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="mt-6 text-white/60 leading-relaxed"
+          >
+            Somos un estudio creativo y tecnico enfocado en paginas que comunican con fuerza y convierten con claridad.
+            Unimos estrategia, diseño y desarrollo para crear experiencias digitales que se sienten solidas desde el primer click.
+          </motion.p>
+        </div>
+
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-20">
+          {values.map((value, index) => (
+            <motion.div
+              key={value.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              className="rounded-2xl border border-white/5 bg-neutral-900/60 p-8"
+            >
+              <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-white/80">
+                <value.Icon className="h-5 w-5" />
+              </div>
+              <h3 className="text-lg font-semibold mb-2">{value.title}</h3>
+              <p className="text-sm text-white/60 leading-relaxed">{value.description}</p>
+            </motion.div>
+          ))}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
