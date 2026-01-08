@@ -53,7 +53,7 @@ export default function Home() {
       <main className="min-h-[calc(100vh-200px)]">
         {renderContent()}
       </main>
-      <SiteFooter />
+      <SiteFooter activeTab={activeTab} setActiveTab={setActiveTab} />
     </div>
   );
 }

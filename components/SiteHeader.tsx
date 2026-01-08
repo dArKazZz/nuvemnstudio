@@ -13,7 +13,7 @@ import {
 import { useState } from "react";
 import { TabType } from "@/app/page";
 
-const navLinks = [
+export const navLinks = [
   { label: "Inicio", tab: "inicio" as TabType, icon: Home },
   { label: "Servicios", tab: "servicios" as TabType, icon: Briefcase },
   { label: "Proyectos", tab: "proyectos" as TabType, icon: Layers },
@@ -86,13 +86,13 @@ export default function SiteHeader({ activeTab, setActiveTab }: SiteHeaderProps)
 
           {/* CTA Button */}
           <motion.a
-            href="#contacto"
+            href="https://wa.link/0ancyj"
             className="hidden rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black transition hover:bg-gray-200 md:inline-flex"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3 }}
+            transition={{ delay: 0.1 }}
           >
             Contactar
           </motion.a>
