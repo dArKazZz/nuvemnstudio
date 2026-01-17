@@ -33,7 +33,7 @@ const services = [
     title: "E-COMMERCE",
     description: "Vender en línea nunca ha sido tan crucial. Un sitio de e-commerce optimizado no solo mejora la experiencia del usuario, sino que también impulsa las ventas y la fidelización de clientes.",
     icon: Store,
-    image: "https://images.unsplash.com/photo-1472851294608-41551b116d48?q=80&w=2670&auto=format&fit=crop",
+    image: "https://www.ecommercenews.pe/wp-content/uploads/2022/02/Beneficios-del-comercio-electronico-en-las-redes-sociales.jpg",
     features: ["Catálogo de productos", "Carrito de compras", "Pasarela de pago segura", "Gestión de inventario",  "Reseñas de clientes", "Integración con redes sociales"],
   },
   {
