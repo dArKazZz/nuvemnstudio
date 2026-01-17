@@ -62,7 +62,7 @@ const technicalServices = [
     title: "Rediseño y Migraciones",
     description: "Mejoramos sitios existentes y migramos a tecnologías modernas.",
     icon: RefreshCcw,
-    features: ["Migración a Next.js", "Core Web Vitals"],
+    features: ["Migración a Next.js", "Core Web Vitals", "Rediseño web", "Optimización SEO"],
   },
   {
     title: "Mantenimiento y Soporte",
