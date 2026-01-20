@@ -7,10 +7,43 @@ import Link from "next/link";
 import QuoteButton from "@/components/QuoteButton";
 import type { TabType } from "@/app/page";
 
-// Declarar tipo global para YouTube API
+// Tipos para YouTube IFrame API
+interface YTPlayer {
+  playVideo: () => void;
+  pauseVideo: () => void;
+  mute: () => void;
+  unMute: () => void;
+  setVolume: (volume: number) => void;
+  getCurrentTime: () => number;
+  getDuration: () => number;
+  seekTo: (seconds: number, allowSeekAhead: boolean) => void;
+  destroy: () => void;
+}
+
+interface YTPlayerEvent {
+  target: YTPlayer;
+  data?: number;
+}
+
+interface YTPlayerConstructor {
+  new (elementId: string, options: {
+    events: {
+      onReady?: (event: YTPlayerEvent) => void;
+      onStateChange?: (event: YTPlayerEvent) => void;
+    };
+  }): YTPlayer;
+}
+
+interface YTAPI {
+  Player: YTPlayerConstructor;
+  PlayerState: {
+    PLAYING: number;
+  };
+}
+
 declare global {
   interface Window {
-    YT: typeof YT;
+    YT: YTAPI;
     onYouTubeIframeAPIReady: () => void;
   }
 }
@@ -21,7 +54,7 @@ interface HeroProps {
 
 export default function Hero({ setActiveTab }: HeroProps) {
   const [isMuted, setIsMuted] = useState(true);
-  const [player, setPlayer] = useState<YT.Player | null>(null);
+  const [player, setPlayer] = useState<YTPlayer | null>(null);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
@@ -47,13 +80,13 @@ export default function Hero({ setActiveTab }: HeroProps) {
     function createPlayer() {
       const ytPlayer = new window.YT.Player("hero-youtube-player", {
         events: {
-          onReady: (event) => {
+          onReady: (event: YTPlayerEvent) => {
             event.target.mute();
             event.target.playVideo();
             setPlayer(event.target);
             setDuration(event.target.getDuration());
           },
-          onStateChange: (event) => {
+          onStateChange: (event: YTPlayerEvent) => {
             if (event.data === window.YT.PlayerState.PLAYING) {
               setDuration(event.target.getDuration());
             }
