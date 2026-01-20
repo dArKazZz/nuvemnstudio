@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { TabType } from "@/app/page";
-
+import Link from "next/link";
 export const navLinks = [
   { label: "Inicio", tab: "inicio" as TabType, icon: Home },
   { label: "Servicios", tab: "servicios" as TabType, icon: Briefcase },
@@ -85,6 +85,9 @@ export default function SiteHeader({ activeTab, setActiveTab }: SiteHeaderProps)
           </motion.div>
 
           {/* CTA Button */}
+
+          {/* 
+          
           <motion.a
             href="https://wa.link/0ancyj"
             className="hidden rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black transition hover:bg-gray-200 md:inline-flex"
@@ -96,6 +99,14 @@ export default function SiteHeader({ activeTab, setActiveTab }: SiteHeaderProps)
           >
             Contactar
           </motion.a>
+          */}
+          
+          <Link
+                    href="/agendarreunion"
+                    className="inline-flex items-center gap-2 px-6 py-2 rounded-full border-2 border-white text-white font-medium hover:bg-white hover:text-black transition-colors"
+                  >
+                    Agendar Reunión
+                  </Link>
 
           {/* Mobile Menu Button */}
           <motion.button
