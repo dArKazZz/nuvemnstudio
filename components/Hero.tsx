@@ -90,7 +90,7 @@ export default function Hero({ setActiveTab }: HeroProps) {
             if (event.data === window.YT.PlayerState.PLAYING) {
               setDuration(event.target.getDuration());
             }
-          },
+          }
         },
       });
     }
@@ -200,88 +200,7 @@ export default function Hero({ setActiveTab }: HeroProps) {
        
       
         {/* Portfolio Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.8 }}
-          className="w-full max-w-7xl mt-24 relative z-20"
-        >
-          <div className="rounded-3xl border border-white/10 bg-black/40 backdrop-blur-md shadow-[0_20px_80px_rgba(0,0,0,0.6)] overflow-hidden">
-            {/* Video Showcase */}
-            <div className="relative w-full aspect-video group">
-              <iframe
-                id="hero-youtube-player"
-                className="w-full h-full pointer-events-none"
-                src="https://www.youtube.com/embed/nhoffNIvvnw?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=nhoffNIvvnw&controls=0&showinfo=0&rel=0&modestbranding=1"
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerPolicy="strict-origin-when-cross-origin"
-              />
-              {/* Overlay que bloquea toda interacción con el video */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-              
-              {/* Botón de sonido al costado */}
-              <button
-                type="button"
-                onClick={toggleMute}
-                className="absolute top-4 right-4 z-10 p-3 rounded-full bg-black/60 border border-white/20 text-white hover:bg-black/80 transition-colors"
-                aria-label={isMuted ? "Activar sonido" : "Silenciar"}
-              >
-                {isMuted ? (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
-                  </svg>
-                ) : (
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-                  </svg>
-                )}
-              </button>
-
-              {/* Contenido sobre el video */}
-              <div className="absolute bottom-0 left-0 right-0 p-8 md:p-12">
-                {/* Barra de progreso - solo visible en hover */}
-                <div className="mb-4 flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-xs text-white/70 font-mono w-10">
-                    {formatTime(currentTime)}
-                  </span>
-                  <div
-                    onClick={handleSeek}
-                    className="flex-1 h-1 bg-white/20 rounded-full cursor-pointer relative hover:h-2 transition-all"
-                  >
-                    <div
-                      className="h-full bg-white rounded-full relative"
-                      style={{ width: `${progress}%` }}
-                    >
-                      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-3 h-3 bg-white rounded-full shadow-lg" />
-                    </div>
-                  </div>
-                  <span className="text-xs text-white/70 font-mono w-10">
-                    {formatTime(duration)}
-                  </span>
-                </div>
-                
-                <div className="flex flex-wrap items-center gap-4">
-                  <button
-                    type="button"
-                    onClick={() => setActiveTab("proyectos")}
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-black font-medium hover:bg-white/90 transition-colors"
-                  >
-                    Ver Portfolio
-                  </button>
-                  <Link
-                    href="/agendarreunion"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-full border-2 border-white text-white font-medium hover:bg-white hover:text-black transition-colors"
-                  >
-                    Agendar Reunión
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+        
       </div> 
       
        {/* Bottom Text */}
