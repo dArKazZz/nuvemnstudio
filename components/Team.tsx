@@ -4,15 +4,23 @@ import { motion } from 'framer-motion';
 
 const team = [
   {
+    name: 'Mauricio Herrera',
+    role: 'CEO · Gestión',
+    bio: 'Encargado de la gestión del estudio y de coordinar la operación del equipo para que cada proyecto avance con claridad, orden y foco comercial.',
+  },
+  {
+    name: 'Paola Hernandez',
+    role: 'Co-Founder · Marketing',
+    bio: 'Lidera el área de marketing y el posicionamiento de marca, conectando estrategia, comunicación y crecimiento para impulsar la presencia comercial de Nuvemn Studio.',
+  },
+  {
     name: 'Joe Villarreal',
-    role: 'CEO & Founder',
-    image: 'https://media.licdn.com/dms/image/v2/D4E03AQEuNJiymIjS7A/profile-displayphoto-crop_800_800/B4EZm8wZSMHIAM-/0/1759808428166?e=1769644800&v=beta&t=UrWhf-gnZrcW4iNkLYcHQwB2S55q3SNullW8uGX-XNw',
-    bio: 'Líder tecnológico en formación y estudiante de Ingeniería de Sistemas. Me impulsa el reto de transformar conceptos abstractos en realidad digital mediante el Desarrollo Web y la Inteligencia Artificial.',
+    role: 'Co-Founder · Desarrollo Web e IA',
+    bio: 'Líder tecnológico en formación y estudiante de Ingeniería de Sistemas. Me impulsa el reto de transformar conceptos abstractos en realidad digital mediante el desarrollo web y la inteligencia artificial.',
   },
   {
     name: 'Marco Chacón',
-    role: 'CEO & Founder',
-    image: 'https://media.licdn.com/dms/image/v2/D4E03AQG-cdw37Y-Gww/profile-displayphoto-scale_400_400/B4EZuAl1TzI0Ag-/0/1767388960509?e=1769644800&v=beta&t=lXUJ11k1oOh_0p_T46cDCDQqWZ8H5V8zjAA1RFDrD3A',
+    role: 'Co-Founder · Desarrollo Móvil',
     bio: 'Estudiante de Ingeniería de Sistemas con pasión por el Desarrollo Web y especializado en Desarrollo Móvil. Apasionado por crear soluciones digitales innovadoras que transformen ideas en realidades tangibles.',
   }
 ];
@@ -48,7 +56,7 @@ export default function Team() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10 max-w-5xl mx-auto">
           {team.map((member, index) => (
             <motion.div
               key={index}
@@ -58,12 +66,12 @@ export default function Team() {
               transition={{ delay: index * 0.2 }}
               className="group bg-neutral-900/50 rounded-2xl p-8 text-center border border-white/5 hover:border-white/10 transition-colors"
             >
-              <div className="relative w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-neutral-800 group-hover:border-blue-500/50 transition-colors duration-300">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-full h-full object-cover"
-                />
+              <div className="relative mx-auto mb-6 flex h-32 w-32 items-center justify-center rounded-full border-4 border-neutral-800 bg-white/5 text-3xl font-display text-white/80 transition-colors duration-300 group-hover:border-blue-500/50">
+                {member.name
+                  .split(" ")
+                  .slice(0, 2)
+                  .map((part) => part.charAt(0))
+                  .join("")}
               </div>
               
               <h3 className="text-2xl font-bold mb-2">{member.name}</h3>
