@@ -5,27 +5,27 @@ import {
   Home,
   Briefcase,
   Layers,
-  DollarSign,
   Users,
   Menu,
   X
 } from "lucide-react";
 import { useState } from "react";
-import { TabType } from "@/app/page";
+import type { SectionId } from "@/app/page";
 import Link from "next/link";
+
 export const navLinks = [
-  { label: "Inicio", tab: "inicio" as TabType, icon: Home },
-  { label: "Servicios", tab: "servicios" as TabType, icon: Briefcase },
-  { label: "Proyectos", tab: "proyectos" as TabType, icon: Layers },
-  { label: "Nosotros", tab: "nosotros" as TabType, icon: Users },
+  { label: "Inicio", section: "inicio" as SectionId, icon: Home },
+  { label: "Servicios", section: "servicios" as SectionId, icon: Briefcase },
+  { label: "Proyectos", section: "proyectos" as SectionId, icon: Layers },
+  { label: "Nosotros", section: "nosotros" as SectionId, icon: Users },
 ];
 
 interface SiteHeaderProps {
-  activeTab: TabType;
-  setActiveTab: (tab: TabType) => void;
+  activeSection: SectionId;
+  onNavigate: (section: SectionId) => void;
 }
 
-export default function SiteHeader({ activeTab, setActiveTab }: SiteHeaderProps) {
+export default function SiteHeader({ activeSection, onNavigate }: SiteHeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
@@ -39,7 +39,8 @@ export default function SiteHeader({ activeTab, setActiveTab }: SiteHeaderProps)
         <nav className="flex items-center justify-between py-4">
           {/* Logo */}
           <motion.button
-            onClick={() => setActiveTab("inicio")}
+            type="button"
+            onClick={() => onNavigate("inicio")}
             className="flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -67,8 +68,10 @@ export default function SiteHeader({ activeTab, setActiveTab }: SiteHeaderProps)
             {navLinks.map((link, index) => (
               <motion.button
                 key={link.label}
-                onClick={() => setActiveTab(link.tab)}
-                className={`relative flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition ${activeTab === link.tab
+                type="button"
+                onClick={() => onNavigate(link.section)}
+                aria-current={activeSection === link.section ? "page" : undefined}
+                className={`relative flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition ${activeSection === link.section
                     ? "bg-white text-black"
                     : "text-white/60 hover:text-white hover:bg-white/10"
                   }`}
@@ -103,7 +106,7 @@ export default function SiteHeader({ activeTab, setActiveTab }: SiteHeaderProps)
           
           <Link
                     href="/agendarreunion"
-                    className="inline-flex items-center gap-2 px-6 py-2 rounded-full border-2 border-white text-white font-medium hover:bg-white hover:text-black transition-colors"
+                    className="hidden items-center gap-2 rounded-full border-2 border-white px-6 py-2 font-medium text-white transition-colors hover:bg-white hover:text-black md:inline-flex"
                   >
                     Agendar Reunión
                   </Link>
@@ -129,14 +132,23 @@ export default function SiteHeader({ activeTab, setActiveTab }: SiteHeaderProps)
               transition={{ duration: 0.2 }}
             >
               <div className="flex flex-col gap-2">
+                <Link
+                  href="/agendarreunion"
+                  onClick={() => setMobileOpen(false)}
+                  className="mb-1 rounded-2xl bg-white px-4 py-3 text-center text-sm font-semibold text-black hover:bg-gray-200"
+                >
+                  Agendar Reunión
+                </Link>
                 {navLinks.map((link, index) => (
                   <motion.button
                     key={link.label}
+                    type="button"
                     onClick={() => {
-                      setActiveTab(link.tab);
+                      onNavigate(link.section);
                       setMobileOpen(false);
                     }}
-                    className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition ${activeTab === link.tab
+                    aria-current={activeSection === link.section ? "page" : undefined}
+                    className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-medium transition ${activeSection === link.section
                         ? "bg-white text-black"
                         : "text-white/60 hover:text-white hover:bg-white/5"
                       }`}
@@ -150,7 +162,7 @@ export default function SiteHeader({ activeTab, setActiveTab }: SiteHeaderProps)
                 ))}
                 <motion.a
                   href="https://wa.link/0ancyj"
-                  className="mt-2 rounded-xl bg-white px-4 py-3 text-center text-sm font-semibold text-black hover:bg-gray-200"
+                  className="mt-2 rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-center text-sm font-semibold text-white hover:bg-white/10"
                   onClick={() => setMobileOpen(false)}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}

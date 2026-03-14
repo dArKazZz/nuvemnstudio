@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Manrope, Unbounded } from "next/font/google";
+import FloatingWhatsAppButton from "@/components/FloatingWhatsAppButton";
 import "./globals.css";
 
 const display = Unbounded({
@@ -31,6 +32,7 @@ export default function RootLayout({
     <html lang="es">
       <body className={`${display.variable} ${body.variable} antialiased`}>
         {children}
+        <FloatingWhatsAppButton />
       </body>
     </html>
   );

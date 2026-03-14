@@ -3,18 +3,17 @@
 import {
   Facebook01Icon,
   InstagramIcon,
-  Linkedin02Icon,
   WhatsappIcon,
 } from "hugeicons-react";
 import { navLinks } from "@/components/SiteHeader";
-import type { TabType } from "@/app/page";
+import type { SectionId } from "@/app/page";
 
 interface SiteFooterProps {
-  activeTab: TabType;
-  setActiveTab: (tab: TabType) => void;
+  activeSection: SectionId;
+  onNavigate: (section: SectionId) => void;
 }
 
-export default function SiteFooter({ activeTab, setActiveTab }: SiteFooterProps) {
+export default function SiteFooter({ activeSection, onNavigate }: SiteFooterProps) {
   return (
     <footer className="bg-black text-white border-t border-white/10 pt-20 pb-10">
       <div className="container mx-auto px-6">
@@ -36,8 +35,8 @@ export default function SiteFooter({ activeTab, setActiveTab }: SiteFooterProps)
                 <li key={link.label}>
                   <button
                     type="button"
-                    onClick={() => setActiveTab(link.tab)}
-                    className={`font-light text-sm transition-colors ${activeTab === link.tab
+                    onClick={() => onNavigate(link.section)}
+                    className={`font-light text-sm transition-colors ${activeSection === link.section
                       ? "text-white"
                       : "text-white/60 hover:text-white"
                     }`}
@@ -71,14 +70,10 @@ export default function SiteFooter({ activeTab, setActiveTab }: SiteFooterProps)
           </div>
         </div>
         
-        <div className="border-t border-white/10 pt-10 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="border-t border-white/10 pt-10 text-center">
            <p className="font-mono text-xs text-white/20 uppercase tracking-widest">
              © 2026 Nuvemn Studio. Todos los derechos reservados.
            </p>
-           <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span className="font-mono text-xs text-white/40 uppercase">Sistema Activo</span>
-           </div>
         </div>
       </div>
     </footer>

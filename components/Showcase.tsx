@@ -3,47 +3,38 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
-const projects = [
+type Project = {
+  id: number;
+  title: string;
+  summary: string;
+  details: string[];
+  accent: {
+    solid: string;
+    glow: string;
+    edge: string;
+  };
+  images: {
+    desktop: string;
+    tablet: string;
+    mobile: string;
+  };
+};
+
+const projects: Project[] = [
   {
     id: 1,
-    title: "Portafolio Ing. Sistemas",
-    description: (
-      <>
-        <p className="mb-4">
-          Diseño y desarrollo de <strong className="text-white">Portafolio Profesional</strong> para estudiante de Ingeniería de Sistemas, enfocado en destacar habilidades técnicas y proyectos de software.
-        </p>
-        <p className="mb-4">
-          La plataforma cuenta con una <strong className="text-white">interfaz minimalista y oscura</strong> ("Dark Mode") ideal para el sector tecnológico, integrando animaciones sutiles y una estructura de navegación fluida para presentar repositorios de código y casos de estudio.
-        </p>
-        <p>
-          Se priorizó el <strong className="text-white">rendimiento y la accesibilidad</strong>, asegurando una presentación impecable tanto en dispositivos móviles como de escritorio, sirviendo como carta de presentación digital de alto impacto.
-        </p>
-      </>
-    ),
-    accentColor: "text-blue-400",
-    images: {
-      desktop: "/projects/2desk.png",
-      tablet: "/projects/2tab.png",
-      mobile: "/projects/2mob.png",
-    },
-  },
-  {
-    id: 2,
     title: "Dogehoot",
-    description: (
-      <>
-        <p className="mb-4">
-          Desarrollo de <strong className="text-white">Dogehoot</strong>, una plataforma de cuestionarios educativos en tiempo real inspirada en la gamificación, permitiendo a los usuarios crear y jugar trivias multijugador.
-        </p>
-        <p className="mb-4">
-          El sistema cuenta con <strong className="text-white">sincronización en vivo</strong> (WebSockets) para gestionar preguntas, respuestas y puntuaciones instantáneas, ofreciendo una experiencia competitiva y fluida similar a Kahoot!.
-        </p>
-        <p>
-          Incluye funcionalidades avanzadas como un editor intuitivo de preguntas, salas de espera personalizadas y un <strong className="text-white">panel de resultados dinámico</strong>, todo envuelto en una interfaz divertida y moderna.
-        </p>
-      </>
-    ),
-    accentColor: "text-purple-400",
+    summary:
+      "Una experiencia competitiva y en vivo para trivias multijugador, con una interfaz divertida y ritmo visual constante.",
+    details: [
+      "La plataforma se construyo para que la energia del juego se sintiera desde la primera pantalla, con transiciones rapidas y una jerarquia clara para preguntas, rankings y resultados.",
+      "El producto combina sincronizacion en vivo, gestion de salas y una identidad visual marcada para que cada partida se vea dinamica tanto en desktop como en mobile.",
+    ],
+    accent: {
+      solid: "#c084fc",
+      glow: "rgba(192, 132, 252, 0.28)",
+      edge: "rgba(192, 132, 252, 0.45)",
+    },
     images: {
       desktop: "/projects/3desk.png",
       tablet: "/projects/3tab.png",
@@ -51,22 +42,19 @@ const projects = [
     },
   },
   {
-    id: 3,
+    id: 2,
     title: "ChatStream Store",
-    description: (
-      <>
-        <p className="mb-4">
-          Implementación de una <strong className="text-white">Tienda Virtual completa</strong> para ChatStream, diseñada para optimizar la venta de productos digitales y suscripciones de streaming.
-        </p>
-        <p className="mb-4">
-          El sitio integra un <strong className="text-white">carrito de compras dinámico</strong> y pasarelas de pago seguras, ofreciendo una experiencia de usuario fluida desde la selección del producto hasta el checkout final.
-        </p>
-        <p>
-          Se desarrolló un panel de administración personalizado para la gestión de inventario y pedidos, con un diseño visual <strong className="text-white">futurista y tecnológico</strong> alineado con la identidad de la marca.
-        </p>
-      </>
-    ),
-    accentColor: "text-emerald-400",
+    summary:
+      "Una tienda digital pensada para vender con claridad, reducir friccion en checkout y sostener una identidad futurista de marca.",
+    details: [
+      "La composicion pone el foco en producto, conversion y confianza: catalogo claro, carrito dinamico y jerarquia visual estable para guiar toda la compra.",
+      "El resultado es una tienda que se siente mas premium que utilitaria, sin perder velocidad ni legibilidad en flujos de pago y administracion.",
+    ],
+    accent: {
+      solid: "#34d399",
+      glow: "rgba(52, 211, 153, 0.25)",
+      edge: "rgba(52, 211, 153, 0.42)",
+    },
     images: {
       desktop: "/projects/4desk.png",
       tablet: "/projects/4tab.png",
@@ -74,172 +62,236 @@ const projects = [
     },
   },
   {
-    id: 4,
+    id: 3,
     title: "Brismar",
-    description: (
-      <>
-        <p className="mb-4">
-          Diseño y desarrollo de <strong className="text-white">Landing Page Corporativa</strong> para Brismar, empresa líder en el sector pesquero, enfocada en la exportación de productos marinos de alta calidad.
-        </p>
-        <p className="mb-4">
-          La web presenta un diseño visual inmersivo que evoca la frescura del océano, con un catálogo detallado de productos y una estructura orientada a la <strong className="text-white">captación de clientes internacionales</strong>.
-        </p>
-        <p>
-          Se optimizó la experiencia para dispositivos móviles y se integraron formularios de contacto directos, facilitando la conexión comercial y fortaleciendo su <strong className="text-white">presencia digital global</strong>.
-        </p>
-      </>
-    ),
-    accentColor: "text-sky-400",
+    summary:
+      "Una landing corporativa con atmosfera oceanica y direccion visual clara para proyectar confianza comercial internacional.",
+    details: [
+      "El sitio se planteo como una vitrina de marca: imagenes inmersivas, narrativa directa y bloques pensados para presentar productos y abrir conversaciones comerciales.",
+      "La interfaz equilibra presencia premium y lectura rapida para que la empresa se vea solida en desktop, tablet y mobile sin caer en una web corporativa generica.",
+    ],
+    accent: {
+      solid: "#38bdf8",
+      glow: "rgba(56, 189, 248, 0.24)",
+      edge: "rgba(56, 189, 248, 0.4)",
+    },
     images: {
       desktop: "/projects/5desk.png",
       tablet: "/projects/5tab.png",
       mobile: "/projects/5mob.png",
     },
   },
-  {
-    id: 5,
-    title: "Sistema Experto Bayesiano",
-    description: (
-      <>
-        <p className="mb-4">
-          Implementación académica de un <strong className="text-white">Sistema Experto con Inteligencia Artificial</strong>, diseñado para realizar diagnósticos y predicciones probabilísticas basadas en redes bayesianas.
-        </p>
-        <p className="mb-4">
-          El proyecto integra algoritmos complejos de inferencia estadística con una <strong className="text-white">interfaz intuitiva</strong>, permitiendo a los usuarios visualizar nodos, probabilidades y dependencias de manera gráfica e interactiva.
-        </p>
-        <p>
-          Desarrollado como solución tecnológica avanzada para la toma de decisiones bajo incertidumbre, destacando el uso de <strong className="text-white">modelos matemáticos rigurosos</strong> aplicados a problemas del mundo real.
-        </p>
-      </>
-    ),
-    accentColor: "text-rose-400",
-    images: {
-      desktop: "/projects/6desk.png",
-      tablet: "/projects/6tab.png",
-      mobile: "/projects/6mob.png",
-    },
-  },
-  {
-    id: 6,
-    title: "EduQuiz",
-    description: (
-      <>
-        <p className="mb-4">
-          Plataforma de <strong className="text-white">cuestionarios en línea</strong> diseñada para fomentar el aprendizaje competitivo entre estudiantes a través de mecánicas de juego.
-        </p>
-        <p className="mb-4">
-          EduQuiz permite crear salas de trivia personalizadas, donde los participantes compiten por puntos en tiempo real, impulsando la <strong className="text-white">participación activa</strong> y el repaso de conceptos académicos de forma lúdica.
-        </p>
-        <p>
-          Con un diseño vibrante y responsivo, la herramienta facilita tanto a docentes como a alumnos la gestión de evaluaciones formativas, transformando el estudio en una <strong className="text-white">experiencia social y divertida</strong>.
-        </p>
-      </>
-    ),
-    accentColor: "text-orange-400",
-    images: {
-      desktop: "/projects/1desk.jpeg",
-      tablet: "/projects/1tab.jpeg",
-      mobile: "/projects/1mob.jpeg",
-    },
-  },
 ];
 
 export default function Showcase() {
-
   return (
-    <section className="py-24 bg-black text-white relative overflow-hidden" id="proyectos">
-      <div className="container mx-auto px-6 pt-8">
-        <div className="mb-20">
-             <h2 className="font-display text-4xl md:text-6xl font-light uppercase tracking-wide mb-4">
-                Proyectos Destacados
-            </h2>
-            <div className="h-1 w-20 bg-[var(--accent-primary)]" />
-        </div>
+    <section
+      className="relative overflow-hidden bg-black py-24 text-white scroll-mt-28"
+      id="proyectos"
+    >
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_38%)]" />
+      <div className="pointer-events-none absolute inset-0 opacity-[0.06] [background-image:linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] [background-size:28px_28px]" />
 
-        <div className="flex flex-col gap-32">
-          {projects.map((project, index) => (
-            <div key={project.id} className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              {/* Left Content (Text) */}
-              <div className={`order-2 ${index % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
-                <motion.h3 
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  className={`font-display text-5xl md:text-6xl font-bold mb-8 italic ${project.accentColor}`}
+      <div className="container relative z-10 mx-auto px-6 pt-8">
+        <motion.div
+          className="mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.35 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
+          <h2 className="max-w-5xl font-display text-[clamp(3.4rem,8vw,7.4rem)] uppercase leading-[0.86] tracking-[-0.05em] text-white">
+            Proyectos con
+            <span className="block text-white/55">mas presencia visual</span>
+          </h2>
+        </motion.div>
+
+        <div className="space-y-10">
+          {projects.map((project, index) => {
+            const isEven = index % 2 === 0;
+
+            return (
+              <motion.article
+                key={project.id}
+                className="group relative overflow-hidden rounded-[28px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] p-4 md:rounded-[34px] md:p-6 lg:p-8"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.25 }}
+                transition={{ duration: 0.7, delay: index * 0.08, ease: "easeOut" }}
+                style={{
+                  boxShadow: `inset 0 1px 0 rgba(255,255,255,0.05), 0 24px 80px rgba(0,0,0,0.34), 0 0 0 1px ${project.accent.edge}`,
+                }}
+              >
+                <div
+                  className="pointer-events-none absolute inset-0 opacity-90"
+                  style={{
+                    background: `radial-gradient(circle at ${
+                      isEven ? "18% 22%" : "82% 22%"
+                    }, ${project.accent.glow} 0%, rgba(0,0,0,0) 42%)`,
+                  }}
+                />
+                <div className="pointer-events-none absolute inset-0 opacity-[0.08] [background-image:linear-gradient(to_right,white_1px,transparent_1px),linear-gradient(to_bottom,white_1px,transparent_1px)] [background-size:22px_22px]" />
+
+                <div
+                  className={`grid items-center gap-6 md:gap-8 lg:gap-12 ${
+                    isEven
+                      ? "lg:grid-cols-[0.92fr_1.08fr]"
+                      : "lg:grid-cols-[1.08fr_0.92fr]"
+                  }`}
                 >
-                  {project.title}
-                </motion.h3>
-                
-                <motion.div 
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.2 }}
-                  className="text-gray-400 leading-relaxed text-lg font-light mb-10"
-                >
-                  {project.description}
-                </motion.div>
-              </div>
+                  <div className={`relative z-10 ${isEven ? "lg:order-1" : "lg:order-2"}`}>
+                    <h3 className="font-display text-[clamp(2.2rem,9vw,5.6rem)] uppercase leading-[0.92] tracking-[-0.05em] text-white">
+                      {project.title}
+                    </h3>
 
-              {/* Right Content - Device Composition Gallery */}
-              <div className={`relative h-[400px] md:h-[500px] w-full mt-12 lg:mt-0 perspective-1000 ${index % 2 === 0 ? 'lg:order-2' : 'lg:order-1'}`}>
-                {/* Decorative background glow */}
-                <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] opacity-20 blur-[100px] pointer-events-none ${project.accentColor.replace('text-', 'bg-')}`} />
+                    <p className="mt-4 max-w-xl text-base leading-relaxed text-white/68 md:mt-5 md:text-lg">
+                      {project.summary}
+                    </p>
 
-                {/* Desktop View (Center - Back) */}
-                <motion.div 
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full md:w-[90%] z-10 rounded-xl overflow-hidden shadow-2xl border border-white/10 bg-gray-900"
-                >
-                     <Image
-                        src={project.images.desktop}
-                        alt="Desktop View"
-                        width={800}
-                        height={500}
-                        className="w-full h-auto object-cover"
-                    />
-                </motion.div>
+                    <div className="mt-6 space-y-3 text-sm leading-relaxed text-white/56 md:mt-8 md:text-[15px]">
+                      {project.details.map((detail) => (
+                        <p key={detail}>{detail}</p>
+                      ))}
+                    </div>
+                  </div>
 
-                 {/* Mobile View (Left - Front) */}
-                 <motion.div 
-                    initial={{ opacity: 0, x: -30, rotate: -12 }}
-                    whileInView={{ opacity: 1, x: 0, rotate: -6 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                    className="absolute top-[60%] left-2 md:-left-4 -translate-y-1/2 w-[25%] md:w-[18%] z-30 rounded-[1.5rem] overflow-hidden shadow-2xl border-[4px] border-gray-900 bg-black"
-                >
-                     <Image
-                        src={project.images.mobile}
-                        alt="Mobile View"
-                        width={300}
-                        height={600}
-                        className="w-full h-auto object-cover"
-                    />
-                </motion.div>
+                  <div className={`relative ${isEven ? "lg:order-2" : "lg:order-1"}`}>
+                    <motion.div
+                      className="relative overflow-hidden rounded-[26px] border border-white/10 bg-black/35 p-3 backdrop-blur-sm sm:p-4 lg:hidden"
+                      initial={{ opacity: 0, scale: 0.96 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true, amount: 0.3 }}
+                      transition={{ duration: 0.7, delay: 0.12, ease: "easeOut" }}
+                    >
+                      <div
+                        className="absolute inset-3 rounded-[22px] opacity-100 sm:inset-4 sm:rounded-[26px]"
+                        style={{
+                          border: `1px solid ${project.accent.edge}`,
+                          background: `radial-gradient(circle at 50% 0%, ${project.accent.glow}, rgba(0,0,0,0) 55%)`,
+                        }}
+                      />
 
-                {/* Tablet View (Right - Front) */}
-                <motion.div 
-                    initial={{ opacity: 0, x: 30, rotate: 12 }}
-                    whileInView={{ opacity: 1, x: 0, rotate: 6 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: 0.4 }}
-                    className="absolute top-[60%] right-2 md:-right-6 -translate-y-1/2 w-[45%] md:w-[45%] z-20 rounded-xl overflow-hidden shadow-2xl border-[4px] border-gray-900 bg-gray-900"
-                >
-                     <Image
-                        src={project.images.tablet}
-                        alt="Tablet View"
-                        width={600}
-                        height={400}
-                        className="w-full h-auto object-cover"
-                    />
-                </motion.div>
+                      <div className="relative z-10">
+                        <motion.div
+                          className="relative overflow-hidden rounded-2xl border border-white/10 bg-neutral-950 shadow-[0_18px_50px_rgba(0,0,0,0.38)]"
+                          whileHover={{ y: -6, scale: 1.01 }}
+                          transition={{ duration: 0.35, ease: "easeOut" }}
+                        >
+                          <Image
+                            src={project.images.desktop}
+                            alt={`${project.title} desktop`}
+                            width={800}
+                            height={500}
+                            priority={index === 0}
+                            className="h-auto w-full object-cover"
+                          />
+                        </motion.div>
 
-              </div>
-            </div>
-          ))}
+                        <div className="mt-3 grid grid-cols-[0.62fr_1fr] gap-3 sm:gap-4">
+                          <motion.div
+                            className="relative overflow-hidden rounded-[1.4rem] border-[4px] border-neutral-950 bg-black shadow-[0_16px_40px_rgba(0,0,0,0.35)]"
+                            initial={{ opacity: 0, x: -18, rotate: -8 }}
+                            whileInView={{ opacity: 1, x: 0, rotate: -4 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.6, delay: 0.22, ease: "easeOut" }}
+                          >
+                            <Image
+                              src={project.images.mobile}
+                              alt={`${project.title} mobile`}
+                              width={300}
+                              height={600}
+                              className="h-auto w-full object-cover"
+                            />
+                          </motion.div>
+
+                          <motion.div
+                            className="relative overflow-hidden rounded-[1.1rem] border-[4px] border-neutral-950 bg-neutral-950 shadow-[0_18px_42px_rgba(0,0,0,0.35)]"
+                            initial={{ opacity: 0, x: 18, rotate: 8 }}
+                            whileInView={{ opacity: 1, x: 0, rotate: 4 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+                          >
+                            <Image
+                              src={project.images.tablet}
+                              alt={`${project.title} tablet`}
+                              width={600}
+                              height={400}
+                              className="h-auto w-full object-cover"
+                            />
+                          </motion.div>
+                        </div>
+                      </div>
+                    </motion.div>
+
+                    <motion.div
+                      className="relative hidden min-h-[520px] overflow-hidden rounded-[30px] border border-white/10 bg-black/35 backdrop-blur-sm lg:block"
+                      initial={{ opacity: 0, scale: 0.96 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true, amount: 0.3 }}
+                      transition={{ duration: 0.7, delay: 0.12, ease: "easeOut" }}
+                    >
+                      <div
+                        className="absolute inset-4 rounded-[26px] opacity-100"
+                        style={{
+                          border: `1px solid ${project.accent.edge}`,
+                          background: `radial-gradient(circle at 50% 0%, ${project.accent.glow}, rgba(0,0,0,0) 55%)`,
+                        }}
+                      />
+                      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[74%] w-[74%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 opacity-35" />
+                      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[54%] w-[54%] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10 opacity-20" />
+
+                      <motion.div
+                        className="absolute left-1/2 top-[46%] z-10 w-[88%] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-2xl border border-white/10 bg-neutral-950 shadow-[0_30px_80px_rgba(0,0,0,0.5)]"
+                        whileHover={{ y: -6, scale: 1.01 }}
+                        transition={{ duration: 0.35, ease: "easeOut" }}
+                      >
+                        <Image
+                          src={project.images.desktop}
+                          alt={`${project.title} desktop`}
+                          width={800}
+                          height={500}
+                          priority={index === 0}
+                          className="h-auto w-full object-cover"
+                        />
+                      </motion.div>
+
+                      <motion.div
+                        className="absolute bottom-[8%] left-[4%] z-30 w-[24%] overflow-hidden rounded-[1.7rem] border-[4px] border-neutral-950 bg-black shadow-[0_18px_50px_rgba(0,0,0,0.45)]"
+                        initial={{ opacity: 0, x: -18, rotate: -8 }}
+                        whileInView={{ opacity: 1, x: 0, rotate: -4 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.6, delay: 0.22, ease: "easeOut" }}
+                      >
+                        <Image
+                          src={project.images.mobile}
+                          alt={`${project.title} mobile`}
+                          width={300}
+                          height={600}
+                          className="h-auto w-full object-cover"
+                        />
+                      </motion.div>
+
+                      <motion.div
+                        className="absolute bottom-[10%] right-[2%] z-20 w-[44%] overflow-hidden rounded-[1.35rem] border-[4px] border-neutral-950 bg-neutral-950 shadow-[0_22px_56px_rgba(0,0,0,0.45)]"
+                        initial={{ opacity: 0, x: 18, rotate: 8 }}
+                        whileInView={{ opacity: 1, x: 0, rotate: 4 }}
+                        viewport={{ once: true, amount: 0.3 }}
+                        transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+                      >
+                        <Image
+                          src={project.images.tablet}
+                          alt={`${project.title} tablet`}
+                          width={600}
+                          height={400}
+                          className="h-auto w-full object-cover"
+                        />
+                      </motion.div>
+                    </motion.div>
+                  </div>
+                </div>
+              </motion.article>
+            );
+          })}
         </div>
       </div>
     </section>

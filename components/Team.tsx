@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Github, Linkedin, Twitter, Target, Sparkles, ShieldCheck } from 'lucide-react';
 
 const team = [
   {
@@ -9,46 +8,18 @@ const team = [
     role: 'CEO & Founder',
     image: 'https://media.licdn.com/dms/image/v2/D4E03AQEuNJiymIjS7A/profile-displayphoto-crop_800_800/B4EZm8wZSMHIAM-/0/1759808428166?e=1769644800&v=beta&t=UrWhf-gnZrcW4iNkLYcHQwB2S55q3SNullW8uGX-XNw',
     bio: 'Líder tecnológico en formación y estudiante de Ingeniería de Sistemas. Me impulsa el reto de transformar conceptos abstractos en realidad digital mediante el Desarrollo Web y la Inteligencia Artificial.',
-    socials: {
-      linkedin: 'www.linkedin.com/in/joe-villarreal-mejia-763029293',
-      github: 'https://github.com/joestevil'
-    }
   },
   {
     name: 'Marco Chacón',
     role: 'CEO & Founder',
     image: 'https://media.licdn.com/dms/image/v2/D4E03AQG-cdw37Y-Gww/profile-displayphoto-scale_400_400/B4EZuAl1TzI0Ag-/0/1767388960509?e=1769644800&v=beta&t=lXUJ11k1oOh_0p_T46cDCDQqWZ8H5V8zjAA1RFDrD3A',
     bio: 'Estudiante de Ingeniería de Sistemas con pasión por el Desarrollo Web y especializado en Desarrollo Móvil. Apasionado por crear soluciones digitales innovadoras que transformen ideas en realidades tangibles.',
-    socials: {
-      twitter: '#',
-      linkedin: '#',
-      github: '#'
-    }
-  }
-];
-
-
-const values = [
-  {
-    title: 'Claridad y enfoque',
-    description: 'Diseñamos experiencias simples que convierten, sin ruido ni piezas innecesarias.',
-    Icon: Target
-  },
-  {
-    title: 'Detalle artesanal',
-    description: 'Cuidamos tipografia, ritmo y microinteracciones para que todo se sienta premium.',
-    Icon: Sparkles
-  },
-  {
-    title: 'Confianza tecnica',
-    description: 'Construimos con bases solidas: performance y escalabilidad desde el inicio.',
-    Icon: ShieldCheck
   }
 ];
 
 export default function Team() {
   return (
-    <section className="py-24 bg-black text-white" id="team">
+    <section className="scroll-mt-28 bg-black py-24 text-white" id="nosotros">
       <div className="container mx-auto px-6">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <motion.h2 
@@ -75,26 +46,6 @@ export default function Team() {
             Somos un estudio creativo y tecnico enfocado en paginas que comunican con fuerza y convierten con claridad.
             Unimos estrategia, diseño y desarrollo para crear experiencias digitales que se sienten solidas desde el primer click.
           </motion.p>
-        </div>
-
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-20">
-          {values.map((value, index) => (
-            <motion.div
-              key={value.title}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="rounded-2xl border border-white/5 bg-neutral-900/60 p-8"
-            >
-              <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 text-white/80">
-                <value.Icon className="h-5 w-5" />
-              </div>
-              <h3 className="text-lg font-semibold mb-2">{value.title}</h3>
-              <p className="text-sm text-white/60 leading-relaxed">{value.description}</p>
-            </motion.div>
-          ))}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">

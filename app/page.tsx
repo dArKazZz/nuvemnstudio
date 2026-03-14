@@ -1,59 +1,78 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Process from "@/components/Process";
 import Showcase from "@/components/Showcase";
-import Pricing from "@/components/Pricing";
 import Team from "@/components/Team";
-import Testimonials from "@/components/Testimonials";
-
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 
-export type TabType = "inicio" | "servicios" | "proyectos" | "nosotros";
+export type SectionId = "inicio" | "servicios" | "proyectos" | "nosotros";
+
+const sectionIds: SectionId[] = ["inicio", "servicios", "proyectos", "nosotros"];
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<TabType>("inicio");
+  const [activeSection, setActiveSection] = useState<SectionId>("inicio");
 
-  // Scroll to top when tab changes
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, [activeTab]);
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((section): section is HTMLElement => section !== null);
 
-  const renderContent = () => {
-    switch (activeTab) {
-      case "inicio":
-        return (
-          <>
-            <Hero setActiveTab={setActiveTab} />
-            
-          </>
-        );
-      case "servicios":
-        return (
-          <>
-            <Services />
-            <Process />
-            
-          </>
-        );
-      case "proyectos":
-        return <Showcase />;
-      case "nosotros":
-        return <Team />;
-      
+    if (sections.length === 0) {
+      return;
     }
+
+    const updateActiveSection = () => {
+      const scrollPosition = window.scrollY + 160;
+      let currentSection = sections[0].id as SectionId;
+
+      sections.forEach((section) => {
+        if (section.offsetTop <= scrollPosition) {
+          currentSection = section.id as SectionId;
+        }
+      });
+
+      setActiveSection((previousSection) =>
+        previousSection === currentSection ? previousSection : currentSection
+      );
+    };
+
+    updateActiveSection();
+
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
+
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+    };
+  }, []);
+
+  const handleNavigate = (section: SectionId) => {
+    const target = document.getElementById(section);
+
+    if (!target) {
+      return;
+    }
+
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    setActiveSection(section);
   };
 
   return (
     <div className="min-h-screen bg-[var(--background)]">
-      <SiteHeader activeTab={activeTab} setActiveTab={setActiveTab} />
-      <main className="min-h-[calc(100vh-200px)]">
-        {renderContent()}
+      <SiteHeader activeSection={activeSection} onNavigate={handleNavigate} />
+      <main className="min-h-[calc(100vh-200px)] bg-black">
+        <Hero />
+        <Services />
+        <Process />
+        <Showcase />
+        <Team />
       </main>
-      <SiteFooter activeTab={activeTab} setActiveTab={setActiveTab} />
+      <SiteFooter activeSection={activeSection} onNavigate={handleNavigate} />
     </div>
   );
 }

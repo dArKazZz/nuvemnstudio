@@ -24,8 +24,6 @@ export default function QuoteButton({ href, onClick, className = "", size = "md"
   const innerStyles = variant === "accent" ? "bg-black text-white" : "bg-white text-black hover:bg-white/90";
   const inner = `${innerBase} ${innerStyles}`;
 
-  const content = <span>Cotiza con nosotros</span>;
-
   const shine = (
     <span className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity">
       <span className="absolute -left-1/2 top-0 h-full w-1/2 rotate-12 bg-[linear-gradient(120deg,transparent,rgba(255,255,255,0.35),transparent)] translate-x-0 group-hover:translate-x-[220%] transition-transform duration-700" />
