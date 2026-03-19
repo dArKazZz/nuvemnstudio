@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const team = [
   {
     name: 'Mauricio Herrera',
-    role: 'CEO · Gestión',
+    role: 'CEO · Co-Founder',
     bio: 'Encargado de la gestión del estudio y de coordinar la operación del equipo para que cada proyecto avance con claridad, orden y foco comercial.',
     imageUrl: 'https://res.cloudinary.com/dpxslk02r/image/upload/v1773899183/1000105210.jpg_zxm3sa.jpg', // Ejemplo: 'https://ejemplo.com/foto-mauricio.jpg'
   },
@@ -18,13 +18,13 @@ const team = [
   {
     name: 'Joe Villarreal',
     role: 'Co-Founder · Desarrollo Web e IA',
-    bio: 'Líder tecnológico en formación y estudiante de Ingeniería de Sistemas. Me impulsa el reto de transformar conceptos abstractos en realidad digital mediante el desarrollo web y la inteligencia artificial.',
+    bio: 'Líder tecnológico y Developer con experiencia en el desarrollo web y la inteligencia artificial.',
     imageUrl: 'https://media.licdn.com/dms/image/v2/D4E03AQE1MRq-xT8c5g/profile-displayphoto-scale_400_400/B4EZwQHlpTI0Ag-/0/1769796951593?e=1775692800&v=beta&t=Hu-gtNqoAdHDrXXOF9RPHmL6YQtFQkcq1U2YpQXP_Yw',
   },
   {
     name: 'Marco Chacón',
     role: 'Co-Founder · Desarrollo Móvil',
-    bio: 'Estudiante de Ingeniería de Sistemas con pasión por el Desarrollo Web y especializado en Desarrollo Móvil. Apasionado por crear soluciones digitales innovadoras que transformen ideas en realidades tangibles.',
+    bio: 'Developer con pasión por el Desarrollo Web y especializado en Desarrollo Móvil. Apasionado por crear soluciones digitales innovadoras que transformen ideas en realidades tangibles.',
     imageUrl: 'https://media-lim1-1.cdn.whatsapp.net/v/t61.24694-24/514239898_1799013120827998_6937545780761214036_n.jpg?ccb=11-4&oh=01_Q5Aa4AFCRz1c60dQdai_iKFcuWXbJW3BP9IQw2OuW1IVpnLRnA&oe=69C8AC94&_nc_sid=5e03e0&_nc_cat=102',
   }
 ];

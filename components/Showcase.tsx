@@ -81,6 +81,66 @@ const projects: Project[] = [
       mobile: "/projects/5mob.png",
     },
   },
+  {
+    id: 4,
+    title: "Neurox Silver Bridge",
+    summary:
+      "Plataforma digital inclusiva diseñada específicamente para la generación plateada, enfocada en accesibilidad, comunidad y bienestar.",
+    details: [
+      "La interfaz prioriza la legibilidad, la navegación sencilla y un alto contraste visual para ofrecer autonomía y confianza a usuarios mayores.",
+      "El diseño transmite calidez y experiencia, conectando tecnología moderna con las necesidades reales de una comunidad en constante crecimiento.",
+    ],
+    accent: {
+      solid: "#fb923c",
+      glow: "rgba(251, 146, 60, 0.25)",
+      edge: "rgba(251, 146, 60, 0.42)",
+    },
+    images: {
+      desktop: "/projects/7desk.png",
+      tablet: "/projects/7tab.png",
+      mobile: "/projects/7mob.png",
+    },
+  },
+  {
+    id: 5,
+    title: "Landing Page Floreria",
+    summary:
+      "Un e-commerce botánico premium que captura la frescura de la naturaleza con un flujo de exploración y compra altamente visual.",
+    details: [
+      "El catálogo destaca formas, texturas y colores vibrantes mediante fotografías inmersivas, ofreciendo una experiencia de compra elegante y sin fricciones.",
+      "Desde la selección cuidada hasta el pago, se ideó un diseño que inspira tranquilidad, transformando la compra de flores en un momento verdaderamente especial.",
+    ],
+    accent: {
+      solid: "#2dd4bf",
+      glow: "rgba(45, 212, 191, 0.25)",
+      edge: "rgba(45, 212, 191, 0.42)",
+    },
+    images: {
+      desktop: "/projects/8desk.png",
+      tablet: "/projects/8tab.png",
+      mobile: "/projects/8mob.png",
+    },
+  },
+  {
+    id: 6,
+    title: "Landign Page Restaurant",
+    summary:
+      "Plataforma de pedidos online para alta gastronomía que combina un apetito visual superior con un checkout moderno y veloz.",
+    details: [
+      "El sistema interactivo de menús guía al usuario a través de un recorrido sensorial que resalta los ingredientes, los platos estrella y recomendaciones del chef.",
+      "Una solución integral que no sacrifica la sofisticación estética, diseñada para simplificar operaciones, aumentar la conversión y fidelizar a cada cliente.",
+    ],
+    accent: {
+      solid: "#f472b6",
+      glow: "rgba(244, 114, 182, 0.25)",
+      edge: "rgba(244, 114, 182, 0.42)",
+    },
+    images: {
+      desktop: "/projects/9desk.png",
+      tablet: "/projects/9tab.png",
+      mobile: "/projects/9mob.png",
+    },
+  },
 ];
 
 export default function Showcase() {
