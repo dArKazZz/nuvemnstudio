@@ -92,7 +92,7 @@ export default function SiteHeader({ activeSection, onNavigate }: SiteHeaderProp
           {/* 
           
           <motion.a
-            href="https://wa.link/0ancyj"
+            href="https://wa.me/5192391079"
             className="hidden rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-black transition hover:bg-gray-200 md:inline-flex"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -161,7 +161,7 @@ export default function SiteHeader({ activeSection, onNavigate }: SiteHeaderProp
                   </motion.button>
                 ))}
                 <motion.a
-                  href="https://wa.link/0ancyj"
+                  href="https://wa.me/5192391079"
                   className="mt-2 rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-center text-sm font-semibold text-white hover:bg-white/10"
                   onClick={() => setMobileOpen(false)}
                   initial={{ opacity: 0, x: -20 }}

@@ -1,6 +1,6 @@
 import { WhatsappIcon } from "hugeicons-react";
 
-const WHATSAPP_URL = "https://wa.link/0ancyj";
+const WHATSAPP_URL = "https://wa.me/51924391079";
 
 export default function FloatingWhatsAppButton() {
   return (

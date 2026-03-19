@@ -7,21 +7,25 @@ const team = [
     name: 'Mauricio Herrera',
     role: 'CEO · Gestión',
     bio: 'Encargado de la gestión del estudio y de coordinar la operación del equipo para que cada proyecto avance con claridad, orden y foco comercial.',
+    imageUrl: 'https://res.cloudinary.com/dpxslk02r/image/upload/v1773899183/1000105210.jpg_zxm3sa.jpg', // Ejemplo: 'https://ejemplo.com/foto-mauricio.jpg'
   },
   {
     name: 'Paola Hernandez',
     role: 'Co-Founder · Marketing',
     bio: 'Lidera el área de marketing y el posicionamiento de marca, conectando estrategia, comunicación y crecimiento para impulsar la presencia comercial de Nuvemn Studio.',
+    imageUrl: 'https://media.licdn.com/dms/image/v2/D4E03AQHW7Dvw-XXigQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1696997826833?e=1775692800&v=beta&t=qNzsE_CymsGdzbiU5V5zkKgSCbsYmn6mJPsR1Yrebw4',
   },
   {
     name: 'Joe Villarreal',
     role: 'Co-Founder · Desarrollo Web e IA',
     bio: 'Líder tecnológico en formación y estudiante de Ingeniería de Sistemas. Me impulsa el reto de transformar conceptos abstractos en realidad digital mediante el desarrollo web y la inteligencia artificial.',
+    imageUrl: 'https://media.licdn.com/dms/image/v2/D4E03AQE1MRq-xT8c5g/profile-displayphoto-scale_400_400/B4EZwQHlpTI0Ag-/0/1769796951593?e=1775692800&v=beta&t=Hu-gtNqoAdHDrXXOF9RPHmL6YQtFQkcq1U2YpQXP_Yw',
   },
   {
     name: 'Marco Chacón',
     role: 'Co-Founder · Desarrollo Móvil',
     bio: 'Estudiante de Ingeniería de Sistemas con pasión por el Desarrollo Web y especializado en Desarrollo Móvil. Apasionado por crear soluciones digitales innovadoras que transformen ideas en realidades tangibles.',
+    imageUrl: 'https://media-lim1-1.cdn.whatsapp.net/v/t61.24694-24/514239898_1799013120827998_6937545780761214036_n.jpg?ccb=11-4&oh=01_Q5Aa4AFCRz1c60dQdai_iKFcuWXbJW3BP9IQw2OuW1IVpnLRnA&oe=69C8AC94&_nc_sid=5e03e0&_nc_cat=102',
   }
 ];
 
@@ -66,12 +70,16 @@ export default function Team() {
               transition={{ delay: index * 0.2 }}
               className="group bg-neutral-900/50 rounded-2xl p-8 text-center border border-white/5 hover:border-white/10 transition-colors"
             >
-              <div className="relative mx-auto mb-6 flex h-32 w-32 items-center justify-center rounded-full border-4 border-neutral-800 bg-white/5 text-3xl font-display text-white/80 transition-colors duration-300 group-hover:border-blue-500/50">
-                {member.name
-                  .split(" ")
-                  .slice(0, 2)
-                  .map((part) => part.charAt(0))
-                  .join("")}
+              <div className="relative mx-auto mb-6 flex h-32 w-32 items-center justify-center rounded-full border-4 border-neutral-800 bg-white/5 text-3xl font-display text-white/80 transition-colors duration-300 group-hover:border-blue-500/50 overflow-hidden">
+                {member.imageUrl ? (
+                  <img src={member.imageUrl} alt={member.name} className="h-full w-full object-cover" />
+                ) : (
+                  member.name
+                    .split(" ")
+                    .slice(0, 2)
+                    .map((part) => part.charAt(0))
+                    .join("")
+                )}
               </div>
               
               <h3 className="text-2xl font-bold mb-2">{member.name}</h3>
