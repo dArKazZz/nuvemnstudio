@@ -61,6 +61,7 @@ const projects: Project[] = [
       mobile: "/projects/4mob.png",
     },
   },
+  /* Glowing Ring Effect 
   {
     id: 3,
     title: "Brismar",
@@ -80,7 +81,7 @@ const projects: Project[] = [
       tablet: "/projects/5tab.png",
       mobile: "/projects/5mob.png",
     },
-  },
+  },*/
   {
     id: 4,
     title: "Neurox Silver Bridge",

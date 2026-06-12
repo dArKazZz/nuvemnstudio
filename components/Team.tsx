@@ -13,19 +13,19 @@ const team = [
     name: 'Paola Hernandez',
     role: 'Co-Founder · Marketing',
     bio: 'Lidera el área de marketing y el posicionamiento de marca, conectando estrategia, comunicación y crecimiento para impulsar la presencia comercial de Nuvemn Studio.',
-    imageUrl: 'https://media.licdn.com/dms/image/v2/D4E03AQHW7Dvw-XXigQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1696997826833?e=1775692800&v=beta&t=qNzsE_CymsGdzbiU5V5zkKgSCbsYmn6mJPsR1Yrebw4',
+    imageUrl: 'https://res.cloudinary.com/dpxslk02r/image/upload/v1781274554/06afc862-6310-441f-8d90-b32b24baa5f4.png',
   },
   {
     name: 'Joe Villarreal',
     role: 'Co-Founder · Desarrollo Web e IA',
     bio: 'Líder tecnológico y Developer con experiencia en el desarrollo web y la inteligencia artificial.',
-    imageUrl: 'https://media.licdn.com/dms/image/v2/D4E03AQE1MRq-xT8c5g/profile-displayphoto-scale_400_400/B4EZwQHlpTI0Ag-/0/1769796951593?e=1775692800&v=beta&t=Hu-gtNqoAdHDrXXOF9RPHmL6YQtFQkcq1U2YpQXP_Yw',
+    imageUrl: 'https://res.cloudinary.com/dpxslk02r/image/upload/v1781274567/7ad793c0-ee85-4447-8a3b-4bea24f59a57.png',
   },
   {
     name: 'Marco Chacón',
     role: 'Co-Founder · Desarrollo Móvil',
     bio: 'Developer con pasión por el Desarrollo Web y especializado en Desarrollo Móvil. Apasionado por crear soluciones digitales innovadoras que transformen ideas en realidades tangibles.',
-    imageUrl: 'https://media-lim1-1.cdn.whatsapp.net/v/t61.24694-24/514239898_1799013120827998_6937545780761214036_n.jpg?ccb=11-4&oh=01_Q5Aa4AFCRz1c60dQdai_iKFcuWXbJW3BP9IQw2OuW1IVpnLRnA&oe=69C8AC94&_nc_sid=5e03e0&_nc_cat=102',
+    imageUrl: 'https://res.cloudinary.com/dpxslk02r/image/upload/v1781274511/3b2ab634-8e58-40d8-aee4-b2c8173a900e.png',
   }
 ];
 
